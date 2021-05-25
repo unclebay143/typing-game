@@ -1,0 +1,42 @@
+.announcement-circle{
+    position: relative;
+    top: 89px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+    min-height: 80px;
+    max-width: 81.25rem;
+    padding: 0 100px;
+    margin-top: -80px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: var(--touch-color);
+    border-radius: 3.125rem;
+    color: var(--white-color);
+}
+
+.announcement-circle--content{
+    display: flex;
+    gap: 10px;
+}
+
+.announcement-circle h1{
+    font-family: var(--poppins);
+    font-size: 0.93rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.lets-go a{
+    color: var(--white-color);
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 1px solid var(--white-color);
+    padding-bottom: 0.2rem;
+}
+
+.announcement-circle--close{
+
+}
+

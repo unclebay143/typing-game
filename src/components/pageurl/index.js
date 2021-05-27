@@ -2,5 +2,6 @@ export const pageurl = {
     HOMEPAGE: "/",
     LOGIN: "/login",
     REGISTER: "/get-started",
-    FORGOTPASSWORD: "/reset-password"
+    FORGOTPASSWORD: "/reset-password",
+    GAMEAREA: "/typing-area",
 }

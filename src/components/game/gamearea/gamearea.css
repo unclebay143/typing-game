@@ -1,0 +1,7 @@
+.game-container{
+    padding: 10rem 6vw;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--poppins);
+}

@@ -30,7 +30,8 @@ export const Registration = () => {
                     {({ isSubmitting })=>(
                         <Form>
                             <div className="form-heading">
-                                <h1>Create a new account</h1>
+                                {/* <h1>Create a new account</h1> */}
+                                <h1>Login your account</h1>
                             </div>
                             <div className="input-wrapper">
                                 <label htmlFor="email">Email</label>
@@ -69,6 +70,7 @@ export const Registration = () => {
                 </Formik>
 
                 <div className="registration-image">
+                    {/* social media signup layout goes well here in case you want to add it, import share button here */}
                     <img className="type-writer" src={typeWriter} alt="two people with typewriter" />
                 </div>
             </section>

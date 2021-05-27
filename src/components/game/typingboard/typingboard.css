@@ -1,0 +1,56 @@
+.typing-board{
+    width: 70%;
+    max-width: 70%;
+    margin: 0 auto;
+    font-family: var(--poppins);
+}
+
+.typing-wrapper{
+    margin-bottom: 3rem;
+}
+
+.typing-text{
+    width: 100%;
+    padding: 0 2rem;
+}
+
+.typing-text .character-out{
+    color: var(--primary-color);
+    color: var(--touch-color);
+}
+
+
+.typing-text .code-line{
+    font-size: 1.5rem;
+    line-height: 2;
+}
+
+.typing-text code{
+    line-height: 2;
+    color: var(--touch-color);
+    color: var(--primary-color);
+
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+
+.typing-input-wrapper{
+    width: 100%;
+    background-color: red;
+}
+
+.typing-input-wrapper textarea{
+    width: 100%;
+    height: 200px;
+    line-height: 2;
+    resize: none;
+    display: block;
+    padding: 2rem;
+    border: 2px solid var(--touch-color);
+    font-family: var(--poppins);
+    font-size: 20px;
+    /* opacity: .9; */
+    color:  var(--touch-color);
+    font-weight: 600;
+}

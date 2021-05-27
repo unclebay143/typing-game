@@ -4,12 +4,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-family: var(--poppins);
-}
-
-.left-items{
-    display: flex;
-    align-items: center;
 }
 
 .navbar--brand{
@@ -19,7 +13,7 @@
 }
 
 .left-items-links{
-    padding-left: 0.8rem;
+    display: none;
 }
 
 .left-items-links a{
@@ -36,10 +30,26 @@
     border-bottom: 1px solid var(--white-color);
 }
 
-.right-items button:first-child{
-    margin-right: 0.5rem;
+.right-items .button:last-child{
+    display: none;
 }
 
-.right--navlink{
+@media(min-width: 900px){
 
+    .left-items{
+        display: flex;
+        align-items: center;
+    }
+
+    .left-items-links{
+        display: block;
+    }
+    
+    .right-items .button:first-child{
+        margin-right: 0.5rem;
+    }
+
+    .right-items .button:last-child{
+        display: inline;
+    }
 }

@@ -1,0 +1,16 @@
+.pop-notifier{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    color: var(--white-color);
+    background: var(--green-color);
+    padding: 1rem 1.5rem;
+    margin: 2rem;
+    border-radius: 0.5rem;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.pop-notifier svg{
+    margin-right: 1rem;
+}

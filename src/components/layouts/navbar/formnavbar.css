@@ -1,0 +1,21 @@
+.formnavbar-header{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 2vh 7.3vw;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--white-color);
+}
+
+.formnavbar-header .navbar--brand{
+    color: var(--touch-color);
+    font-size: .7rem;
+}
+
+
+.form-navbar button:first-child{
+    margin-right: 0.67rem;
+}

@@ -5,6 +5,7 @@ import './navbar.css';
 
 // components
 import { Button } from '../button/Button';
+import { pageurl } from '../../pageurl';
 
 export const Navbar = () => {
     return (
@@ -28,11 +29,13 @@ export const Navbar = () => {
                         <div  className="right-items-links">
                             <Button 
                                 type="custom--btn-outline"
-                                label="Login"
+                                label="Start Typing"
+                                linkUrl={pageurl.LOGIN}
                             />
 
                             <Button 
                                 label="create a new account"
+                                linkUrl={pageurl.REGISTER}
                             />
                         </div>
                     </section>

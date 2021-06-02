@@ -31,7 +31,7 @@ export const ShareButtons = () => {
                     </abbr>
                 </a>
                 <a 
-                    class="twitter-share-button"
+                    className="twitter-share-button"
                     target="_blank"
                     rel="noopener noreferrer"
                     data-size="large"

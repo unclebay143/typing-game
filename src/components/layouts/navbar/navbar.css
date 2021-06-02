@@ -12,6 +12,11 @@
     font-size: 1.3rem;
 }
 
+.navbar--brand code{
+    font-family: var(--poppins);
+
+}
+
 .left-items-links{
     display: none;
 }
@@ -27,7 +32,7 @@
 }
 
 .left-items-links a:hover{
-    border-bottom: 1px solid var(--white-color);
+    border-bottom: 2px solid var(--white-color);
 }
 
 .right-items .button:last-child{

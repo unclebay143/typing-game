@@ -1,0 +1,15 @@
+.music-player{
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.music-player svg{
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+.audio-name{
+    position: absolute;
+    top: 23rem;
+    white-space: nowrap;
+}

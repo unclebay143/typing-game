@@ -1,0 +1,53 @@
+
+.typist-performance{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1rem 3rem;
+    line-height: 1.5;
+    background-color: var(--touch-color);
+    color: var(--white-color);
+    display: flex;
+    flex-direction: column;
+    border-bottom-left-radius: 0.4rem;
+    cursor: pointer;
+}
+
+/* SHOW FULL PERFORMANCE */
+.collapse-typist-performance{
+    height: 100%;
+    border-bottom-left-radius: 0rem;
+    background-color: aliceblue;
+    color: var(--touch-color);
+}
+
+/* HIDE FULL PERFORMANCE */
+.full-performance{
+    display: none;
+}
+
+.display-full-performance{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 50%;
+    margin-top: 1rem;
+}
+
+.full-performance p{
+    line-height: 3;
+}
+
+.typist-performance span{
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.current-performance .wpm{
+    margin-right: 1rem;
+}
+
+.current-performance .accuracy{
+    margin-left: 1rem;
+}
+

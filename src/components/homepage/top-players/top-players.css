@@ -10,7 +10,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-bottom: 4px solid var(--touch-color);
+    /* border-bottom: 4px solid var(--touch-color); */
     background-color: var(--primary-color);
     color: var(--white-color);
     padding-bottom: 2rem;
@@ -24,11 +24,10 @@
 
 
 .rank-board{
-    border: 4px solid var(--touch-color);
-    border: 4px solid #edeeed;
-    border: 4px solid #ECDEEC;
     background-color: var(--white-color);
+    border-top: 4px solid var(--touch-color);
     border-radius: 0.23rem;
+    padding-bottom: 1rem;
 }
 
 .rank-board--heading{
@@ -114,7 +113,6 @@
 
 .board-toggler{
     text-align: center;
-    margin-bottom: 1rem;
 }
 
 

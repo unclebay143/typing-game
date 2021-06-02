@@ -45,7 +45,9 @@ export const TopPlayers = () => {
     const [showAll, setShowAll] = useState(false)
     const top10 = new Array(showAll ? 10 : 3).fill(topPlayers)
 
+    console.log(showAll);
     const handleShowAll = () =>{
+        console.log("ss");
         return setShowAll(!showAll)
     }
     return (
@@ -67,8 +69,8 @@ export const TopPlayers = () => {
                     </div>
                     <div className="board-toggler">
                         <Button 
-                            label={`${showAll ? "Show less" : "Show more"}` }
                             func={handleShowAll}
+                            label={`${showAll ? "Show less" : "Show more"}` }
                             type="custom--btn-outline-primary"
                         />
                     </div>

@@ -2,7 +2,6 @@ import React from 'react';
 import './overheadnotify.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faLinkedinIn, faTwitter } from '@fortawesome/free-brands-svg-icons';
-import { faClipboard } from '@fortawesome/free-solid-svg-icons';
 
 export const OverHeadNotify = () => {
     return (
@@ -22,18 +21,18 @@ export const OverHeadNotify = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         data-size="large"
-                        href="https://twitter.com/intent/tweet?text=I just scored 123Wpm on"
+                        href="https://twitter.com/intent/follow?screen_name=unclebigbay143"
                     >
-                        <abbr title="Make a tweet about us">
+                        <abbr title="Follow us on twitter">
                             <FontAwesomeIcon icon={faTwitter} />
                         </abbr>
                     </a>
                     <a 
-                        href="https://www.linkedin.com/sharing/share-offsite/?url=unclebigbay.hashnode.dev" 
+                        href="https://www.linkedin.com/in/unclebigbay" 
                         target="_blank" 
                         rel="noopener noreferrer"
                     >
-                        <abbr title="Share on LinkedIn">
+                        <abbr title="Follow us on twitter">
                             <FontAwesomeIcon icon={faLinkedinIn} />
                         </abbr>
                     </a>

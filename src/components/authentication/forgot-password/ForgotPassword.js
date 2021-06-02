@@ -1,18 +1,14 @@
 import { ErrorMessage, Field, Form, Formik } from 'formik';
-import React, { useState } from 'react';
+import React from 'react';
 import { Button } from '../../layouts/button/Button';
 import './forgotpassword.css';
 import searchingAccounct from './../../../assets/img/searching-someone.svg';
 import { forgotPasswordSchema } from '../../_helper/validator/schema';
 import { FormNavbar } from '../../layouts/navbar/FormNavbar';
-import { Link } from 'react-router-dom';
 
 
 export const ForgotPassword = () => {
-
-    console.log(window.location.hostname)
-    const [nextStep, setnextStep] = useState("Password");
-    console.log(nextStep);
+    
     return (
         <React.Fragment>
             <FormNavbar loginPage={false}/>

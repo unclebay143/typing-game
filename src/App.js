@@ -7,6 +7,7 @@ import { Login } from './components/authentication/login/Login';
 import { ForgotPassword } from './components/authentication/forgot-password/ForgotPassword';
 import { GameArea } from './components/game/gamearea/GameArea';
 
+
 function App() {
   return (
     <div className="App">
@@ -15,8 +16,7 @@ function App() {
         <Route exact path={pageurl.LOGIN} component={Login}/>
         <Route exact path={pageurl.REGISTER} component={Registration}/>
         <Route exact path={pageurl.FORGOTPASSWORD} component={ForgotPassword}/>
-        <Route path={pageurl.GAMEAREA} component={GameArea}/>
-
+        <Route path={pageurl.DASHBOARD} component={GameArea}/>
       </Switch>
     </div>
   );

@@ -3,5 +3,6 @@ export const pageurl = {
     LOGIN: "/login",
     REGISTER: "/get-started",
     FORGOTPASSWORD: "/reset-password",
-    GAMEAREA: "/typing-area",
+    DASHBOARD: "/dashboard",
+    GAMERESULT: "/dashboard/result",
 }

@@ -2,6 +2,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowAltCircleRight, faTimes,  } from '@fortawesome/free-solid-svg-icons';
 import React, { useState } from 'react';
 import './announcement-circle.css';
+import { Link } from 'react-router-dom';
+import { pageurl } from '../../pageurl';
 
 export const AnnouncementCircle = () => {
     const [closeAnnouncement, setCloseAnnouncement] = useState(false)
@@ -12,7 +14,7 @@ export const AnnouncementCircle = () => {
                     <h1>Join unclebigbay, grace and 100+ developers improving their typing speed.</h1>
                     <div className="lets-go">
                         <h1>
-                            <a href="#">Let's go</a> 
+                            <Link to={pageurl.LOGIN}>Let's go</Link> 
                         </h1>
                         <FontAwesomeIcon className="lets-go-icon" icon={faArrowAltCircleRight}/>
                     </div>

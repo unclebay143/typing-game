@@ -1,8 +1,8 @@
 export const codeQuotes = {
     javascript:[
             "const name = 'wilson williams'; // visitor name",
-            "console.log(`welcome $name`); // greet visitor",
-            "window.location.assign('me');",
+            // "console.log(`welcome $name`); // greet visitor",
+            // "window.location.assign('me');",
             "window;",
         ],
         skin:[

@@ -3,22 +3,23 @@ import './typingboard.css';
 import useKeyPress from '../../../hooks/useKeyPress';
 import { codeQuotes } from './codeQuotes';
 import { currentTime } from '../../_helper/time/time';
+import { PlayerPerformance } from '../performance/PlayerPerformance';
 
 export const TypingBoard = () => {
-    const { javascript, skin } = codeQuotes;
+    const { javascript } = codeQuotes;
     const [preferredLanguage, setPreferredLanguage] = useState(javascript);
     const [outgoingChars, setOutgoingChars] = useState('');
     const [currentCharBlockIndex, setCurrentCharBlockIndex] = useState(0)
     const [leftPadding, setLeftPadding] = useState(new Array(5).fill(' ').join(''),);
     const [currentChar, setCurrentChar] = useState(preferredLanguage[currentCharBlockIndex].charAt(0));
     const [incomingChars, setIncomingChars] = useState(preferredLanguage[currentCharBlockIndex].substr(1));
-    const [userType, setuserType] = useState("const name = 'wilson williams'; // visitor name")
     const [startTime, setStartTime] = useState();
     const [wordCount, setWordCount] = useState(0);
     const [wpm, setWpm] = useState(0);
     const [accuracy, setAccuracy] = useState(0);
     const [typedChars, setTypedChars] = useState('');
-    
+    const [gameOver, setGameOver] = useState(false);
+   
     const nextCode = (array) =>{// FUNCTION THAT GETS THE NEXT CODE FROM THE ARRAY
 
         if(currentCharBlockIndex >= 0 && currentCharBlockIndex < array.length - 1){ // ONLY RUN IF THERE IS MORE CODE
@@ -30,6 +31,15 @@ export const TypingBoard = () => {
             
             return nextItem
         }
+
+
+        if(currentCharBlockIndex === (array.length - 1)){
+            setGameOver(true)
+            handleGameOver()
+        }
+
+        // RETURN EMPTY STRING WHEN THE ARRAY IS ZERO INSTEAD OF FUNCTION DEFUALT UNDEFINED
+        return "";
     }
     
     useKeyPress(key=>{
@@ -92,31 +102,28 @@ export const TypingBoard = () => {
 
         //3 -DIVIDE THE OUTGOING CHARACTERS WITH THE TYPED CHARACTERS
         setAccuracy(((updatedOutgoingChars.length * 100) / updatedTypedChars.length).toFixed(2,),);
-
-
-        
-        
-        
     });
 
-    const handleChange = (e)=>{
-        setuserType(e.target.value)
+
+    const handleGameOver = () =>{
+        console.log(wpm)
     }
 
     return (
         <React.Fragment>
             <div className="typing-board">
-                WPM: {wpm} | ACC: {accuracy}%
+                <PlayerPerformance wpm={wpm} accuracy={accuracy}/>
                 <section className="typing-wrapper">
                     <div className="typing-text">
                         <code className="character-out">
                             {outgoingChars}
                         </code>
                         <code>{currentChar}{incomingChars}</code>
+                        <code className="instruction">(press space)</code>
                     </div>
                 </section>
                 <section className="typing-input-wrapper">
-                    <textarea placeholder="Start coding..." value={ outgoingChars } onChange={handleChange} spellCheck="false" autoFocus></textarea>
+                    <textarea placeholder="Start coding..." value={outgoingChars} spellCheck="false" autoFocus readOnly></textarea>
                 </section>
             </div>
         </React.Fragment>

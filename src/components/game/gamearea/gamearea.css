@@ -1,7 +1,14 @@
 .game-container{
+    min-height: 100vh;
     padding: 10rem 6vw;    
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: var(--poppins);
+    background-color: var(--white-color);
+    transition: 0.5s ease
+}
+
+.dark.game-container{
+    background: var(--touch-color);
 }

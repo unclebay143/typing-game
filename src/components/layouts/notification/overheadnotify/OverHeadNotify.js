@@ -2,12 +2,20 @@ import React from 'react';
 import './overheadnotify.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faLinkedinIn, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { GithubStar } from './github-star/GithubStar';
 
 export const OverHeadNotify = () => {
     return (
         <React.Fragment>
-            <section className="over-head-notification">
-                <div className="social-media--follow">
+            <div className="over-head-notification">
+
+                {/* Project Github star */}
+                <section className="github-star-wrapper">
+                    <GithubStar />
+                </section>
+
+                {/* Social Media Section */}
+                <section className="social-media--follow">
                     <a 
                         href="https://www.facebook.com/sharer/sharer.php?u=https://unclebigbay.hashnode.dev" 
                         target="_blank"
@@ -36,8 +44,8 @@ export const OverHeadNotify = () => {
                             <FontAwesomeIcon icon={faLinkedinIn} />
                         </abbr>
                     </a>
-                </div>
-            </section>
+                </section>
+            </div>
         </React.Fragment>
     )
 }

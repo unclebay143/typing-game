@@ -6,6 +6,7 @@ import './navbar.css';
 // components
 import { Button } from '../button/Button';
 import { pageurl } from '../../pageurl';
+import { Link } from 'react-router-dom';
 
 export const Navbar = () => {
     return (
@@ -20,8 +21,8 @@ export const Navbar = () => {
                         <div className="left-items-links">
                             <a href="/">Features</a>
                             <a href="/">Team</a>
-                            <a href="/">Demo</a>
-                            <a href="/">Sponsor</a>
+                            <Link to={pageurl.DASHBOARD}>Demo</Link>
+                            <a href="https://www.buymeacoffee.com/unclebigbay">By Me a coffee</a>
                             <a href="/">FAQ</a>
                         </div>
                     </section>

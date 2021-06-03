@@ -1,5 +1,4 @@
 .music-player{
-    text-align: center;
     margin-bottom: 2rem;
 }
 
@@ -12,4 +11,11 @@
     position: absolute;
     top: 23rem;
     white-space: nowrap;
+}
+
+
+@media(min-width: 900px){
+    .music-player{
+        text-align: center;
+    }
 }

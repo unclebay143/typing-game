@@ -39,8 +39,7 @@ export const GameResult = () => {
                 {/*  */}
                 <section className="share-point">
                     <RegularButton
-                        className="twitter-share-button"
-                        type="custom--btn-outline"
+                        type="custom--btn-outline twitter-share-button"
                         target="_blank"
                         rel="noopener noreferrer"
                         linkUrl="https://twitter.com/intent/tweet?text=I just scored 123Wpm {on typing.com by @unclebigbay143}"

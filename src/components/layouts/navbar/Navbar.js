@@ -22,7 +22,11 @@ export const Navbar = () => {
                             <a href="/">Features</a>
                             <a href="/">Team</a>
                             <Link to={pageurl.DASHBOARD}>Demo</Link>
-                            <a href="https://www.buymeacoffee.com/unclebigbay">By Me a coffee</a>
+                            <a 
+                                href="https://www.buymeacoffee.com/unclebigbay"
+                                target="_blank"
+                                rel="noopener noreferer"
+                            >By Me a coffee</a>
                             <a href="/">FAQ</a>
                         </div>
                     </section>

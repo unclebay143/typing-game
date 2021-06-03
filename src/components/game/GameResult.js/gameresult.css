@@ -19,10 +19,6 @@
 }
 
 
-.result-body{
-    
-}
-
 .result-body .heading,
 .point-heading{
     display: flex;
@@ -48,10 +44,6 @@
     margin-top: 3rem;
 }
 
-.share-point .twitter-share-button{
-    margin-left: 1rem;
-    /* color: dodgerblue; */
-}
-
-.new-record-alert{
+.share-point abbr{
+    text-decoration: none;
 }

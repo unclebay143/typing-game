@@ -60,11 +60,13 @@
 
 .typing-text code{
     line-height: 2;
-    color: var(--white-color);
-    color: var(--touch-color);
     color: var(--grey-color);
     font-size: 1.5rem;
     font-weight: 600;
+}
+
+.dark.typing-text code{
+    color: var(--touch-color);
 }
 
 

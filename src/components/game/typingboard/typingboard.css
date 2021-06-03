@@ -34,8 +34,18 @@
     text-transform: capitalize;
 }
 
-.typing-wrapper{
-    margin-bottom: 3rem;
+.typing-wrapper,
+.typing-input-wrapper{
+    display: none;
+}
+
+.no-mobile-version{
+    z-index: 999;
+    position: relative;
+    bottom: 3rem;
+    text-align: right;
+    text-transform: capitalize;
+    color: var(--white-color);
 }
 
 .typing-text{
@@ -82,3 +92,17 @@
 }
 
 
+@media(min-width: 900px){
+    .no-mobile-version{
+        display: none;
+    }
+
+    .typing-wrapper,
+    .typing-input-wrapper{
+        display: block;
+    }
+
+    .typing-wrapper{
+        margin-bottom: 3rem;
+    }
+}

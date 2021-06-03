@@ -8,7 +8,7 @@ import { faStar, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 // LAYOUT
-import { Button } from '../../layouts/button/Button';
+import { Button, RegularButton } from '../../layouts/button/Button';
 
 const topPlayers = (
     <div className="top-player">
@@ -31,10 +31,12 @@ const topPlayers = (
             </div>
         </div>
         <div className="right-info">
-            <Button
+            <RegularButton
+                linkUrl="https://www.twitter.com/unclebigbay143"
                 type="custom--btn-touch"
                 label="Twitter"
                 icon={faTwitter}
+                target="_blank"
             />
         </div>
     </div>

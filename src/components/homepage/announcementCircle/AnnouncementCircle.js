@@ -14,7 +14,7 @@ export const AnnouncementCircle = () => {
                     <h1>Join unclebigbay, grace and 100+ developers improving their typing speed.</h1>
                     <div className="lets-go">
                         <h1>
-                            <Link to={pageurl.LOGIN}>Let's go</Link> 
+                            <Link to={pageurl.REGISTER}>Let's go</Link> 
                         </h1>
                         <FontAwesomeIcon className="lets-go-icon" icon={faArrowAltCircleRight}/>
                     </div>

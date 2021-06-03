@@ -40,8 +40,9 @@ export const AudioPlayer = () => {
 
                     Your browser does not support the audio element.
                 </audio>
-
-                <FontAwesomeIcon icon={playing ? faPauseCircle : faPlayCircle } onClick={handleMusic}/>
+                <abbr title="Lofi Music">
+                    <FontAwesomeIcon icon={playing ? faPauseCircle : faPlayCircle } onClick={handleMusic}/>
+                </abbr>
             </div>
         </React.Fragment>
     )

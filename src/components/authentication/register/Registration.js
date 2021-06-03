@@ -30,8 +30,8 @@ export const Registration = () => {
                     {({ isSubmitting })=>(
                         <Form>
                             <div className="form-heading">
-                                {/* <h1>Create a new account</h1> */}
-                                <h1>Login your account</h1>
+                                <h1>Create new account</h1>
+                                {/* <h1>Login your account</h1> */}
                             </div>
                             <div className="input-wrapper">
                                 <label htmlFor="email">Email</label>

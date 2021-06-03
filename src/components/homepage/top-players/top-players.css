@@ -17,7 +17,7 @@
 }
 
 .greeting-text{
-    font-size: 2.9rem;
+    font-size: 1.9rem;
     display: block;
     text-align: center;
 }
@@ -48,7 +48,7 @@
 }
 
 .right-info{
-    margin-top: 0.256rem;
+    margin-top: 0.95256rem;
 }
 
 .right-info .button{
@@ -121,9 +121,17 @@
         margin-top: 50px;
     }
 
+    .greeting-text{
+        /* font-size: 2.9rem; */
+    }
+
     .top-player{
         display: flex;
         justify-content: space-between;
         align-items: center;
+    }
+
+    .right-info{
+        margin-top: 0.256rem;
     }
 }

@@ -1,6 +1,6 @@
 .over-head-notification{
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     font-size: 1.256rem;
     padding: 0.4234rem 4vw;
@@ -10,4 +10,12 @@
 .over-head-notification .social-media--follow a{
     color: var(--primary-color);
     margin-left: 2rem;
+}
+
+
+@media(min-width: 900px){
+    .over-head-notification{
+        justify-content: flex-end;
+    }
+    
 }

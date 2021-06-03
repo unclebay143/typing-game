@@ -72,7 +72,7 @@ form{
 }
 
 .registration-image{
-    width: 50%;
+    display: none;
 }
 
 
@@ -101,6 +101,10 @@ form{
         font-size: 2rem;
     }
 
+    .registration-image{
+        display: block;
+        width: 50%;
+    }
     
     .registration-image .type-writer{
         margin: 8rem 1rem 2rem 2rem;

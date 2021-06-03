@@ -19,7 +19,7 @@ export const GameResult = () => {
                 {/*  */}
                 <section className="">
                     <div className="result-heading">
-                        <h1>Typing Result</h1>
+                        <h1>Typing Result 😀</h1>
                     </div>
 
                 </section>

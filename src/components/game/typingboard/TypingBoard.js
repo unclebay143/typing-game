@@ -113,6 +113,8 @@ export const TypingBoard = () => {
         <React.Fragment>
             <div className="typing-board">
                 <PlayerPerformance wpm={wpm} accuracy={accuracy}/>
+                <h1 className="no-mobile-version">Switch to pc</h1>
+                <h1 className="show-smiley">{wpm < 10 ? "😭" : "🤪"}</h1>
                 <section className="typing-wrapper">
                     <div className="typing-text">
                         <code className="character-out">

@@ -57,7 +57,9 @@ export const Sidebar = ({themeCallback}) => {
                         showHomeButton && (
                             <div className="navigation-icon">
                                 <Link to={pageurl.DASHBOARD}>
-                                    <FontAwesomeIcon icon={faHome}/>
+                                    <abbr title="Dashboard">
+                                        <FontAwesomeIcon icon={faHome}/>
+                                    </abbr>
                                 </Link>
                             </div>
                         )
@@ -67,7 +69,9 @@ export const Sidebar = ({themeCallback}) => {
                 <section className="sidebar-items-down">
                     <AudioPlayer />
                     <div className="theme-toggle">
-                        <FontAwesomeIcon icon={darkTheme ? faCloud : faSun } onClick={handleThemeSwitch}/>
+                        <abbr title="Switch Theme">
+                            <FontAwesomeIcon icon={darkTheme ? faCloud : faSun } onClick={handleThemeSwitch}/>
+                        </abbr>
                     </div>
                     <div to={pageurl.GAMERESULT} className="profile-image">
                         <img src="https://github.com/unclebay143.png" alt="player profile"/>

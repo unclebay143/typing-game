@@ -22,9 +22,7 @@
 }
 
 .announcement-circle--content{
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
+    display: block;
 }
 
 .announcement-circle h1{
@@ -44,11 +42,7 @@
 }
 
 .lets-go a{
-    color: var(--white-color);
-    font-weight: 700;
-    text-decoration: none;
-    border-bottom: 1px solid var(--white-color);
-    padding-bottom: 0.2rem;
+    display: none;
 }
 
 .lets-go-icon{
@@ -90,9 +84,18 @@
     }
 
     .lets-go-icon{
-        padding: 2px;
-        margin-left: 0.3rem;
+        margin-left: 0.4rem;
+        margin-bottom: 0.2rem;
         display: block;
+    }
+
+    .lets-go a{
+        display: block;
+        color: var(--white-color);
+        font-weight: 700;
+        text-decoration: none;
+        border-bottom: 1px solid var(--white-color);
+        padding-bottom: 0.2rem;
     }
     
 }

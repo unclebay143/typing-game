@@ -19,7 +19,7 @@ export const FormNavbar = ({loginPage}) => {
                             <Button 
                                 label="Create a new account" 
                                 linkUrl={pageurl.REGISTER}
-                                type="custom--btn-touch"
+                                type="custom--btn-touch new-account-btn"
                             />
                             ):(
                             <Button 
@@ -35,7 +35,7 @@ export const FormNavbar = ({loginPage}) => {
                     <Button 
                         label="Explore"
                         linkUrl={pageurl.HOMEPAGE}
-                        type="custom--btn-outline-primary"
+                        type="custom--btn-outline-primary explore-btn"
                     />
                 </nav>
             </header>

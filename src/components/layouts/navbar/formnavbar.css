@@ -19,3 +19,20 @@
 .form-navbar button:first-child{
     margin-right: 0.67rem;
 }
+
+@media(max-width: 900px){
+
+    .form-navbar{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .new-account-btn{
+        font-size: 0.66rem;
+    }
+    
+    .explore-btn{
+        font-size: 0.6rem;
+    }
+}

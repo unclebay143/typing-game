@@ -25,7 +25,7 @@ export const FormNavbar = ({loginPage}) => {
                             <Button 
                                 label="Start Typing" 
                                 linkUrl={pageurl.LOGIN}
-                                type="custom--btn-touch"
+                                type="custom--btn-touch login-btn"
                             />
                         )
 

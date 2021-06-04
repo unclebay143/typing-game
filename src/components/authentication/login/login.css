@@ -5,8 +5,7 @@
     display: flex;
     flex-direction: column-reverse;
     justify-content: center;
-    align-items: center;
-    padding: 0 6vw;
+    padding: 15vh 7.3vw;
 }
 
 .login .form-heading{
@@ -100,11 +99,8 @@ form{
 
 @media(min-width: 900px){
     .login{
-        background: var(--primary-color);
-        width: 100%;
-        height: 100vh;
-        display: flex;
         flex-direction: row;
+        align-items: center;
         padding: 0 4vw;
     }
 

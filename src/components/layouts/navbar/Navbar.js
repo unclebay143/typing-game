@@ -19,8 +19,16 @@ export const Navbar = () => {
                         </div>
 
                         <div className="left-items-links">
-                            <a href="/">Features</a>
-                            <a href="/">Team</a>
+                            <a 
+                                href="https://unclebay143.github.io/typing-game/"
+                                target="_blank"
+                                rel="noopener noreferer"
+                                >Features</a>
+                            <a
+                                href="https://unclebigbay.dev/"
+                                target="_blank"
+                                rel="noopener noreferer"
+                            >Team</a>
                             <Link to={pageurl.DASHBOARD}>Demo</Link>
                             <a 
                                 href="https://www.buymeacoffee.com/unclebigbay"

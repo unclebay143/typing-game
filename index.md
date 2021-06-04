@@ -1,37 +1,33 @@
-## Welcome to GitHub Pages
+# Typing Game for Developers to Boost their typing speed
 
-You can use the [editor on GitHub](https://github.com/unclebay143/typing-game/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## 1. Trainers will be ranked real-time on the landing page
 
-### Markdown
+![image](https://user-images.githubusercontent.com/58919619/120639485-4bf6ae80-c469-11eb-897b-ac2953277cc6.png)
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## 2. Sign Up 
 
-```markdown
-Syntax highlighted code block
+![image](https://user-images.githubusercontent.com/58919619/120639630-77799900-c469-11eb-8463-a02b59735aa5.png)
 
-# Header 1
-## Header 2
-### Header 3
+## 3. Sign In
 
-- Bulleted
-- List
+![image](https://user-images.githubusercontent.com/58919619/120639685-895b3c00-c469-11eb-9791-06279fd5809d.png)
 
-1. Numbered
-2. List
+## 4. Forgot Password
 
-**Bold** and _Italic_ and `Code` text
+![image](https://user-images.githubusercontent.com/58919619/120639822-b0197280-c469-11eb-8fc0-68a4af8657a1.png)
 
-[Link](url) and ![Image](src)
-```
+## 5. Dashboard
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+![image](https://user-images.githubusercontent.com/58919619/120639871-be678e80-c469-11eb-9f35-df72a1e0bdce.png)
 
-### Jekyll Themes
+## 6. Light Mode
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/unclebay143/typing-game/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+![image](https://user-images.githubusercontent.com/58919619/120639947-d4754f00-c469-11eb-99f1-cc0c44a56bd8.png)
 
-### Support or Contact
+### - Extra Lofi Music 
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+## 7. Result 
+
+![image](https://user-images.githubusercontent.com/58919619/120640062-f66ed180-c469-11eb-95f4-30646d3d529c.png)
+

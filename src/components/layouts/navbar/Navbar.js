@@ -26,7 +26,7 @@ export const Navbar = () => {
                                 href="https://www.buymeacoffee.com/unclebigbay"
                                 target="_blank"
                                 rel="noopener noreferer"
-                            >By Me a coffee</a>
+                            >Buy Me a coffee</a>
                             <a href="/">FAQ</a>
                         </div>
                     </section>

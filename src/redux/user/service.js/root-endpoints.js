@@ -1,1 +1,3 @@
-export const KIDS_GAMES_ENDPOINT = "https://partners.9ijakids.com/index.php?partnerId=555776&accessToken=l0lawtvv-94bv-oi4d-u808-5ubz&action=catalogfilter";
+export const BASE_URL = process.env.REACT_APP_BASE_URL;
+export const REGISTER = "/user/register";
+export const LOGIN = "/user/login";

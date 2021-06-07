@@ -1,124 +1,121 @@
-.login{
-    background: var(--primary-color);
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: center;
-    padding: 15vh 7.3vw;
+.login {
+  background: var(--primary-color);
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  padding: 15vh 7.3vw;
 }
 
-.login .form-heading{
-    line-height: 1.5;
-    margin: 1rem 0;
+.login .form-heading {
+  line-height: 1.5;
+  margin: 1rem 0;
+  color: var(--white-color);
+  font-size: 2rem;
+}
+
+form {
+  width: fit-content;
+}
+
+.login .input-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.input-wrapper label {
+  color: var(--white-color);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.login .error-message {
+  font-size: 0.78rem;
+  text-align: right;
+  color: var(--white-color);
+  font-weight: 600;
+  position: relative;
+  top: 30px;
+}
+
+.login .input-wrapper input {
+  margin: 0.5rem 0 1rem 0;
+  padding: 12px;
+  height: 44px;
+  width: 100%;
+  padding-top: 11px;
+  padding-bottom: 13px;
+  font-size: 0.987rem;
+  line-height: 1.33333333;
+  border-radius: 4px;
+  border: 2px solid var(--white-color);
+  font-family: var(--poppins);
+}
+
+.login .input-wrapper input:focus {
+  outline: 1px double var(--primary-color);
+}
+
+.login .input-wrapper:last-child {
+  margin-top: 0.4rem;
+}
+
+.login .input-wrapper button {
+  background-color: var(--touch-color);
+  color: var(--white-color);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.5;
+  font-family: var(--poppins);
+}
+
+.forgot-password {
+  position: relative;
+  top: 1.3rem;
+}
+
+.forgot-password a {
+  color: var(--white-color);
+  text-decoration: none;
+  padding-bottom: 0.3rem;
+}
+
+.forgot-password a:hover {
+  border-bottom: 0.09rem solid var(--white-color);
+}
+
+.login-image {
+  display: none;
+}
+
+.type-writer {
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-width: 900px) {
+  .login {
+    flex-direction: row;
+    align-items: center;
+    padding: 0 4vw;
+  }
+
+  .login .form-heading {
+    line-height: 2;
+    margin-bottom: 1rem;
+    margin-top: 3rem;
     color: var(--white-color);
     font-size: 2rem;
-}
+  }
 
-form{
-    width: fit-content;
+  .login-image {
+    display: block;
+    width: 50%;
+  }
 
-}
-
-.login .input-wrapper{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.input-wrapper label{
-    color: var(--white-color);
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-}
-
-.login .error-message{
-    font-size: 0.78rem;
-    text-align: right;
-    color: var(--warning-color);
-    font-weight: 600;
-}
-
-.login .input-wrapper input{
-    margin: 0.5rem 0 1rem 0;
-    padding: 12px;
-    height: 44px;
-    width: 100%;
-    padding-top: 11px;
-    padding-bottom: 13px;
-    font-size: 0.987rem;
-    line-height: 1.33333333;
-    border-radius: 4px;
-    border: 2px solid var(--white-color);
-    font-family: var(--poppins);
-}
-
-.login .input-wrapper input:focus{
-    outline: 1px double var(--primary-color);
-}
-
-.login .input-wrapper:last-child{
-    margin-top: 0.4rem;
-}
-
-.login .input-wrapper button{
-    background-color: var(--touch-color);
-    color: var(--white-color);
-    font-size: 1.5rem;
-    font-weight: 700;
-    line-height: 1.5;
-    font-family: var(--poppins);
-}
-
-.forgot-password{
-    position: relative;
-    top: 1.3rem;
-}
-
-.forgot-password a{
-    color: var(--white-color);
-    text-decoration: none;
-    padding-bottom: 0.3rem;
-}
-
-
-.forgot-password a:hover{
-    border-bottom: 0.09rem solid var(--white-color);
-}
-
-.login-image{
-    display: none;
-}
-
-
-.type-writer{
-    width: 100%;
-    height: 100%;
-}
-
-
-@media(min-width: 900px){
-    .login{
-        flex-direction: row;
-        align-items: center;
-        padding: 0 4vw;
-    }
-
-    
-    .login .form-heading{
-        line-height: 2;
-        margin-bottom: 1rem;
-        margin-top: 3rem;
-        color: var(--white-color);
-        font-size: 2rem;
-    }
-
-    .login-image{
-        display: block;
-        width: 50%;
-    }
-    
-    .login-image .type-writer{
-        margin: 8rem 1rem 2rem 2rem;
-    }
+  .login-image .type-writer {
+    margin: 8rem 1rem 2rem 2rem;
+  }
 }

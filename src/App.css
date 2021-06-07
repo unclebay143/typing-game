@@ -1,20 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,200;1,300;1,400;1,500;1,600;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,200;1,300;1,400;1,500;1,600;1,800;1,900&display=swap");
 
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-:root{
-    --poppins: 'Poppins';
-    --touch-color: #4A154B;
-    --primary-color: #2696E8;
-    /* --primary-color: #4A154B;
+:root {
+  --poppins: "Poppins";
+  --touch-color: #4a154b;
+  --primary-color: #2696e8;
+  /* --primary-color: #4A154B;
     --touch-color: #2696E8; */
-    --white-color: #FFFFFF;
-    --grey-color: #CCCCCC;
-    --green-color: rgba(4,189,101,1);
-    --light-blue-color: rgba(59,130,246,0.5);
-    --warning-color: rgba(255,101,78,1);
+  --black-color: #000000;
+  --white-color: #ffffff;
+  --grey-color: #cccccc;
+  --green-color: rgba(4, 189, 101, 1);
+  --light-blue-color: rgba(59, 130, 246, 0.5);
+  --warning-color: rgba(255, 101, 78, 1);
 }

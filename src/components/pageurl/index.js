@@ -1,8 +1,9 @@
 export const pageurl = {
-    HOMEPAGE: "/",
-    LOGIN: "/login",
-    REGISTER: "/get-started",
-    FORGOTPASSWORD: "/reset-password",
-    DASHBOARD: "/dashboard",
-    GAMERESULT: "/dashboard/result",
-}
+  HOMEPAGE: "/",
+  REGISTER: "/get-started",
+  WELCOME_ONBOARD: "/welcome",
+  LOGIN: "/login",
+  FORGOT_PASSWORD: "/reset-password",
+  DASHBOARD: "/dashboard",
+  GAME_RESULT: "/dashboard/result",
+};

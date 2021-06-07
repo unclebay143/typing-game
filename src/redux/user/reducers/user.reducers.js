@@ -1,5 +1,6 @@
 import {
-  SET_ERROR,
+  SET_SCREEN_MESSAGE,
+  CLEAR_SCREEN_MESSAGE,
   REGISTRATION_SUCCESSFUL,
   LOGIN_SUCCESSFULL,
   USER_LOADED,
@@ -7,7 +8,10 @@ import {
 
 const INITIAL_STATE = {
   user: null,
-  error: null,
+  screenMessage: {
+    message: null,
+    type: null,
+  },
   isLoggedIn: false,
 };
 
@@ -17,10 +21,21 @@ const userReducer = (state = INITIAL_STATE, action) => {
   const { type, payload } = action;
 
   switch (type) {
-    case SET_ERROR: // Handles all errors, i.e no need for registration/login error cases
+    case SET_SCREEN_MESSAGE: // Handles all NOTIFICATIONS, i.e no need for registration/login error cases
       return {
         ...state,
-        error: payload,
+        screenMessage: {
+          message: payload.message,
+          type: payload.type,
+        },
+      };
+    case CLEAR_SCREEN_MESSAGE: // Clear all error
+      return {
+        ...state,
+        screenMessage: {
+          message: null,
+          type: null,
+        },
       };
     case REGISTRATION_SUCCESSFUL:
       return {

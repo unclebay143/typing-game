@@ -7,6 +7,7 @@ import { Login } from "./components/authentication/login/Login";
 import { ForgotPassword } from "./components/authentication/forgot-password/ForgotPassword";
 import { GameArea } from "./components/game/gamearea/GameArea";
 import { Welcome } from "./components/confirmation/welcome/Welcome";
+import { PasswordConfirmation } from "./components/confirmation/passwordConfirmation/PasswordConfirmation";
 import { PopNotify } from "./components/layouts/notification/popnotify/PopNotify";
 
 function App() {
@@ -20,6 +21,11 @@ function App() {
         <Route exact path={pageurl.REGISTER} component={Registration} />
         <Route exact path={pageurl.LOGIN} component={Login} />
         <Route exact path={pageurl.WELCOME_ONBOARD} component={Welcome} />
+        <Route
+          exact
+          path={pageurl.FORGOT_PASSWORD_CONFIRMATION}
+          component={PasswordConfirmation}
+        />
         <Route
           exact
           path={pageurl.FORGOT_PASSWORD}

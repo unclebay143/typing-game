@@ -4,6 +4,7 @@ export const pageurl = {
   WELCOME_ONBOARD: "/welcome",
   LOGIN: "/login",
   FORGOT_PASSWORD: "/reset-password",
+  FORGOT_PASSWORD_CONFIRMATION: "/success",
   DASHBOARD: "/dashboard",
   GAME_RESULT: "/dashboard/result",
 };

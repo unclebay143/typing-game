@@ -33,7 +33,7 @@ export const Registration = () => {
           validationSchema={registerationSchema}
           // Handle form submission
           onSubmit={(values, action) => {
-            // send credentials to backend
+            // Send credentials to backend
             dispatch(register(values, action));
           }}
         >

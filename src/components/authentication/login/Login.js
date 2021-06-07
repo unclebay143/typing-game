@@ -6,11 +6,12 @@ import typeWriter from "./../../../assets/img/type-writer.svg";
 import { loginSchema } from "../../_helper/validator/schema";
 import { FormNavbar } from "../../layouts/navbar/FormNavbar";
 import { Link } from "react-router-dom";
+import { login } from "../../../redux/user/actions/user.actions";
+import { useDispatch } from "react-redux";
 
 export const Login = () => {
-  console.log(window.location.hostname);
+  const dispatch = useDispatch();
   const [nextStep, setnextStep] = useState("Password");
-  console.log(nextStep);
   return (
     <React.Fragment>
       <FormNavbar loginPage={true} />
@@ -21,11 +22,12 @@ export const Login = () => {
             password: "",
             email: "",
           }}
-          // FORM VALIDATION HANDLED BY YUP
+          // Yup should validate form
           validationSchema={loginSchema}
-          onSubmit={(values) => {
-            // HANDLE FORM SUBMISSION
-            console.log(values);
+          // Handle form submission
+          onSubmit={(values, action) => {
+            // Send credentials to backend
+            dispatch(login(values, action));
           }}
         >
           {({ isSubmitting }) => (

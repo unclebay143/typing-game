@@ -1,13 +1,24 @@
-import { ErrorMessage, Field, Form, Formik } from 'formik';
+// React
 import React from 'react';
-import { Button } from '../../layouts/button/Button';
-import './registration.css';
-import typeWriter from './../../../assets/img/type-writer.svg';
-import { registerationSchema } from '../../_helper/validator/schema';
-import { FormNavbar } from '../../layouts/navbar/FormNavbar';
+import { useDispatch } from 'react-redux';
 
+// Formik
+import { ErrorMessage, Field, Form, Formik } from 'formik';
+import { registerationSchema } from '../../_helper/validator/schema';
+
+// Components
+import { FormNavbar } from '../../layouts/navbar/FormNavbar';
+import { Button } from '../../layouts/button/Button';
+import typeWriter from './../../../assets/img/type-writer.svg';
+
+// Action
+import { register } from '../../../redux/user/actions/user.actions';
+
+// Css
+import './registration.css';
 
 export const Registration = () => {
+    const dispatch = useDispatch();
     return (
         <React.Fragment>
             <FormNavbar />
@@ -24,6 +35,7 @@ export const Registration = () => {
 
                     onSubmit={(values)=>{// HANDLE FORM SUBMISSION
                         console.log(values)
+                        dispatch(register(values))
                     }}
                 
                 >

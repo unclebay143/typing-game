@@ -1,81 +1,80 @@
-.sidebar{
-    background-color: var(--touch-color);
-    height: 100%;
-    position: absolute;
-    top: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 1rem;
-    color: var(--grey-color);
-    overflow: hidden;
+.sidebar {
+  background-color: var(--touch-color);
+  height: 100%;
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  color: var(--grey-color);
+  overflow: hidden;
 }
 
-.select-pro-language select{
-    text-transform: capitalize;
-    border: 1px solid var(--touch-color);
-    outline: none;
-    font-family: var(--poppins);
-    cursor: pointer;
-    box-shadow: inset 0 0 0 1px var(--touch-color);
-    padding: 0.125rem;
+.select-pro-language select {
+  text-transform: capitalize;
+  border: 1px solid var(--touch-color);
+  outline: none;
+  font-family: var(--poppins);
+  cursor: pointer;
+  box-shadow: inset 0 0 0 1px var(--touch-color);
+  padding: 0.125rem;
 }
 
-option{
-    font-size: 0.9rem;
+option {
+  font-size: 0.9rem;
 }
 
-.sidebar-items-top{
-    width: 100%;
+.sidebar-items-top {
+  width: 100%;
 }
 
-.navigation-icon{
-    margin-top: 3rem;
-    padding-right: .5rem;
-    text-align: right;
+.navigation-icon {
+  margin-top: 3rem;
+  padding-right: 0.5rem;
+  text-align: right;
 }
 
-.navigation-icon a{
-    color: var(--white-color);
+.navigation-icon a {
+  color: var(--white-color);
 }
 
-.navigation-icon svg{
-    font-size: 2rem;
-    cursor: pointer;
+.navigation-icon svg {
+  font-size: 2rem;
+  cursor: pointer;
 }
 
-.theme-toggle{
-    margin-bottom: 2rem;
+.theme-toggle {
+  margin-bottom: 2rem;
 }
 
-.theme-toggle svg{
-    cursor: pointer;
-    font-size: 2rem;
+.theme-toggle svg {
+  cursor: pointer;
+  font-size: 2rem;
 }
 
-
-.profile-image{
-    width: 3rem;
-    cursor: pointer;
+.profile-image {
+  width: 3rem;
+  cursor: pointer;
 }
 
-.profile-image img{
-    display: block;
-    border-radius: 3rem;
-    width: 100%;
-    height: 100%;
+.profile-image img {
+  display: block;
+  border-radius: 3rem;
+  width: 100%;
+  height: 100%;
 }
 
+@media (min-width: 900px) {
+  .sidebar {
+    overflow: unset;
+  }
+  .theme-toggle {
+    text-align: center;
+  }
 
-@media(min-width: 900px){
-    .theme-toggle{
-        text-align: center;
-    }
-
-
-    .profile-image,
-    .sidebar-items-down{
-        align-self: flex-end;
-    }
-
+  .profile-image,
+  .sidebar-items-down {
+    align-self: flex-end;
+  }
 }

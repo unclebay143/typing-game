@@ -1,26 +1,42 @@
-import { faStar } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useState } from 'react';
+import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import "./playerperformance.css";
 
-export const PlayerPerformance = ({wpm, accuracy}) => {
-    const [togglePerformance, setTogglePerformance] = useState(false)
-  
-    return (
-        <React.Fragment>
-            <section className={`typist-performance ${togglePerformance && "collapse-typist-performance"}`} onClick={(()=>setTogglePerformance(!togglePerformance))}>
-                <div className="rank-info">
-                    <FontAwesomeIcon icon={faStar}/>
-                    <span className="position">2</span>
-                </div>
-                <div className="current-performance">
-                    <span className="wpm">WPM: {wpm} </span> | <span className="accuracy"> ACC: {accuracy}%</span>
-                </div>
-                <div className={`full-performance ${togglePerformance && "display-full-performance"}`}>
-                    <p>WPM:</p>
-                    <p>ACCURACY:</p>
-                </div>
-            </section>
-        </React.Fragment>
-    )
-}
+export const PlayerPerformance = ({ currentGameWpm, currentGameAccuracy }) => {
+  const [togglePerformance, setTogglePerformance] = useState(false);
+  const { gameRecord } = useSelector((state) => state.user);
+  const { rank, wpm, accuracy } = gameRecord || {};
+  return (
+    <React.Fragment>
+      <section
+        className={`typist-performance ${
+          togglePerformance && "collapse-typist-performance"
+        }`}
+        onClick={() => setTogglePerformance(!togglePerformance)}
+      >
+        {gameRecord && (
+          <React.Fragment>
+            <div className="rank-info">
+              <FontAwesomeIcon icon={faStar} />
+              <span className="position">{rank}</span>
+            </div>
+            <div className="current-performance">
+              <span className="wpm">WPM: {currentGameWpm} </span> |{" "}
+              <span className="accuracy"> ACC: {currentGameAccuracy}%</span>
+            </div>
+            <div
+              className={`full-performance ${
+                togglePerformance && "display-full-performance"
+              }`}
+            >
+              <p>ACCURACY: {accuracy}%</p>
+              <p>WPM: {wpm}</p>
+            </div>
+          </React.Fragment>
+        )}
+      </section>
+    </React.Fragment>
+  );
+};

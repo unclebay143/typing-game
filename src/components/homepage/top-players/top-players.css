@@ -1,137 +1,148 @@
-.rank-section{
-    margin-top: 120px;
-    padding-bottom: 160px;
-    max-width: 62.875rem;
-    margin-left: auto;
-    margin-right: auto;
+.rank-section {
+  margin-top: 120px;
+  padding-bottom: 160px;
+  max-width: 62.875rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.welcome-user{
+/* Loading state style */
+.rank-section.loading {
+  color: var(--white-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
+
+.rank-section.rank-section.loading svg {
+  font-size: 3rem;
+}
+
+/*  */
+
+.welcome-user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border-bottom: 4px solid var(--touch-color); */
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  padding-bottom: 2rem;
+}
+
+.greeting-text {
+  font-size: 1.9rem;
+  display: block;
+  text-align: center;
+}
+
+.rank-board {
+  background-color: var(--white-color);
+  border-top: 4px solid var(--touch-color);
+  border-radius: 0.23rem;
+  padding-bottom: 1rem;
+}
+
+.rank-board--heading {
+  padding: 1rem;
+  color: var(--touch-color);
+  background-color: #ecdeec;
+  font-size: 1.125rem;
+}
+
+.top-player {
+  padding: 1rem;
+}
+
+.top-player .left-info {
+  display: flex;
+  align-items: center;
+}
+
+.right-info {
+  margin-top: 0.95256rem;
+}
+
+.right-info .button {
+  width: 100%;
+  font-size: 14px;
+  font-weight: 700;
+  background-color: var(--primary-color);
+}
+
+.right-info .button:hover {
+  box-shadow: inset 0 0 0 1px var(--white-color);
+}
+
+.top-player--image {
+  height: 75px;
+  width: 75px;
+}
+
+.top-player--image img {
+  border-radius: 5px;
+  height: 100%;
+  width: 100%;
+}
+
+.player-information {
+  margin-left: 1rem;
+  white-space: nowrap;
+}
+
+.player-information .player-name {
+  color: var(--touch-color);
+  color: var(--primary-color);
+  text-transform: capitalize;
+}
+
+.player-information .player-details {
+  display: flex;
+  align-items: flex-end;
+}
+
+.player-details .player-star {
+  margin-right: 1rem;
+}
+
+.player-details .score-time {
+  font-weight: 600;
+  color: #696969;
+  color: var(--primary-color);
+  font-size: 0.775rem;
+  line-height: 20px;
+  opacity: 0.7;
+}
+
+.player-star svg {
+  color: #cccccc;
+}
+
+.player-star svg.checked-rank {
+  color: orange;
+}
+
+.board-toggler {
+  text-align: center;
+}
+
+@media (min-width: 900px) {
+  .rank-section {
+    margin-top: 50px;
+  }
+
+  .greeting-text {
+    /* font-size: 2.9rem; */
+  }
+
+  .top-player {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    /* border-bottom: 4px solid var(--touch-color); */
-    background-color: var(--primary-color);
-    color: var(--white-color);
-    padding-bottom: 2rem;
-}
+  }
 
-.greeting-text{
-    font-size: 1.9rem;
-    display: block;
-    text-align: center;
-}
-
-
-.rank-board{
-    background-color: var(--white-color);
-    border-top: 4px solid var(--touch-color);
-    border-radius: 0.23rem;
-    padding-bottom: 1rem;
-}
-
-.rank-board--heading{
-    padding: 1rem;
-    color: var(--touch-color);
-    background-color: #ECDEEC;
-    font-size: 1.125rem;
-}
-
-
-.top-player{
-    padding: 1rem;
-}
-
-.top-player .left-info{
-    display: flex;
-    align-items: center;
-}
-
-.right-info{
-    margin-top: 0.95256rem;
-}
-
-.right-info .button{
-    width: 100%;
-    font-size: 14px;
-    font-weight: 700;
-    background-color: var(--primary-color);
-}
-
-.right-info .button:hover{
-    box-shadow: inset 0 0 0 1px var(--white-color);
-}
-
-
-.top-player--image{
-    height: 75px;
-    width: 75px;
-}
-
-.top-player--image img{
-    border-radius: 5px;
-    height: 100%;
-    width: 100%;
-}
-
-
-.player-information{
-    margin-left: 1rem;
-    white-space: nowrap;
-}
-
-.player-information .player-name{
-    color: var(--touch-color);
-    color: var(--primary-color);
-}
-
-.player-information .player-details{
-    display: flex;
-    align-items: flex-end;
-}
-
-.player-details .player-star{
-    margin-right: 1rem;
-}
-
-.player-details .score-time{
-    font-weight: 600;
-    color: #696969;
-    color: var(--primary-color);
-    font-size: .775rem;
-    line-height: 20px;
-    opacity: 0.7;
-}
-
-.player-star svg{
-    color: #CCCCCC;
-}
-
-.player-star svg.checked-rank{
-    color: orange;
-}
-
-.board-toggler{
-    text-align: center;
-}
-
-
-@media(min-width: 900px){
-    .rank-section{
-        margin-top: 50px;
-    }
-
-    .greeting-text{
-        /* font-size: 2.9rem; */
-    }
-
-    .top-player{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .right-info{
-        margin-top: 0.256rem;
-    }
+  .right-info {
+    margin-top: 0.256rem;
+  }
 }

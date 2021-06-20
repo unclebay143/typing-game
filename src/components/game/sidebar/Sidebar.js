@@ -5,11 +5,15 @@ import { Link, useLocation } from "react-router-dom";
 import { pageurl } from "../../pageurl";
 import { AudioPlayer } from "../music/AudioPlayer";
 import "./sidebar.css";
+import dummyImage from "./../../../assets/img/no-image-avatar.png";
+
+import { SidebarMenu } from "./SidebarMenu";
 
 export const Sidebar = ({ themeCallback }) => {
   const [darkTheme, setDarkTheme] = useState(false);
   const location = useLocation();
   const [showHomeButton, setShowHomeButton] = useState(false);
+  const [openMenu, setOpenMenu] = useState(false);
   let prefferedTheme = localStorage.getItem("_dark_theme");
 
   // check if the current path is the dashboard
@@ -73,13 +77,15 @@ export const Sidebar = ({ themeCallback }) => {
               />
             </abbr>
           </div>
-          <div to={pageurl.GAME_RESULT} className="profile-image">
-            <img
-              src="https://github.com/unclebay143.png"
-              alt="player profile"
-            />
+          <div
+            to={pageurl.GAME_RESULT}
+            className="profile-image"
+            onClick={() => setOpenMenu(!openMenu)}
+          >
+            <img src={dummyImage} alt="player profile" />
           </div>
         </section>
+        <SidebarMenu openMenu={openMenu} />
       </aside>
     </React.Fragment>
   );

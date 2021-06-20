@@ -4,10 +4,12 @@ import {
   REGISTRATION_SUCCESSFUL,
   LOGIN_SUCCESSFULL,
   USER_LOADED,
+  PLAYER_GAME_RECORD_LOADED,
 } from "./../../types/index";
 
 const INITIAL_STATE = {
   user: null,
+  gameRecord: null,
   screenMessage: {
     message: null,
     type: null,
@@ -50,6 +52,12 @@ const userReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         user: payload,
+        isLoggedIn: true,
+      };
+    case PLAYER_GAME_RECORD_LOADED:
+      return {
+        ...state,
+        gameRecord: payload,
       };
 
     default:

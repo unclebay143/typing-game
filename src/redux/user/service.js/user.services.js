@@ -1,8 +1,15 @@
 // React
 import axios from "axios";
+import axiosInstance from "../../../axios";
 
 // Endpoints
-import { BASE_URL, LOGIN, REGISTER } from "./root-endpoints";
+import {
+  BASE_URL,
+  LOAD_PLAYER_GAME_RECORD,
+  LOAD_USER_ENDPOINT,
+  LOGIN,
+  REGISTER,
+} from "./root-endpoints";
 
 // Registration service function
 const registerNewPlayer = async (username, email, password) => {
@@ -20,6 +27,8 @@ const registerNewPlayer = async (username, email, password) => {
         return status < 500; // Reject only if the status code is greater than or equal to 500
       },
     });
+
+    // return response to action
     return res;
   } catch (error) {
     // Return error
@@ -37,11 +46,55 @@ const loginPlayer = async (username, password) => {
   // Async/Await
   try {
     const res = await axios.post(BASE_URL + LOGIN, payload, {
+      // Access 400 message object from response
+      validateStatus: function (status) {
+        return status < 500; // Reject only if the status code is greater than or equal to 500
+      },
+    });
+
+    // Store jwt to localstorage
+    localStorage.setItem("jwt-token", res.data.token);
+
+    // Return response to action
+    return res;
+  } catch (error) {
+    // Return error
+    return error;
+  }
+};
+
+// Load user
+const loadPlayerProfile = async () => {
+  // Async/Await
+  try {
+    const res = await axiosInstance.get(BASE_URL + LOAD_USER_ENDPOINT, {
       // Access 400 message object
       validateStatus: function (status) {
         return status < 500; // Reject only if the status code is greater than or equal to 500
       },
     });
+
+    // Return response to action
+    return res;
+  } catch (error) {
+    // Return error
+    return error;
+  }
+};
+
+// Load user
+const loadPlayerGameRecord = async () => {
+  // Async/Await
+  try {
+    const res = await axiosInstance.get(BASE_URL + LOAD_PLAYER_GAME_RECORD, {
+      // Access 400 message object
+      validateStatus: function (status) {
+        return status < 500; // Reject only if the status code is greater than or equal to 500
+      },
+    });
+
+    // Return response to action
+    return res;
   } catch (error) {
     // Return error
     return error;
@@ -52,6 +105,8 @@ const loginPlayer = async (username, password) => {
 const UserService = {
   registerNewPlayer,
   loginPlayer,
+  loadPlayerProfile,
+  loadPlayerGameRecord,
 };
 
 export default UserService;

@@ -8,7 +8,6 @@ import { registerationSchema } from "../../_helper/validator/schema";
 
 // Components
 import { FormNavbar } from "../../layouts/navbar/FormNavbar";
-import { Button } from "../../layouts/button/Button";
 import typeWriter from "./../../../assets/img/type-writer.svg";
 
 // Action
@@ -16,9 +15,20 @@ import { register } from "../../../redux/user/actions/user.actions";
 
 // Css
 import "./registration.css";
+import { pageurl } from "../../pageurl";
+import { useHistory } from "react-router";
 
 export const Registration = () => {
   const dispatch = useDispatch();
+  const history = useHistory();
+
+  // Get user jwt token
+  const token = localStorage.getItem("jwt-token");
+
+  // Redirect authenticated users
+  if (token) {
+    history.push(pageurl.DASHBOARD);
+  }
   return (
     <React.Fragment>
       <FormNavbar />

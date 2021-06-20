@@ -34,25 +34,33 @@ export const PopNotify = () => {
     return () => {};
   }, [screenMessage]);
 
-  // Handle the screenMessage timeout
-  useEffect(() => {
-    // 10 seconds
-    const duration = 10000;
-    // Only start the counter when there is a message on screen
-    const screenDelay =
-      currentMessage &&
-      setTimeout(() => {
-        dispatch({
-          // Remove screen message from redux
-          type: CLEAR_SCREEN_MESSAGE,
-        });
-      }, duration);
+  console.log(currentMessage);
 
-    return () => {
-      // Remove setTimeout
-      clearTimeout(screenDelay);
-    };
-  }, [dispatch, currentMessage]);
+  // Handle the screenMessage timeout
+  // useEffect(() => {
+  // 10 seconds
+  // const duration = 100;
+  // Only start the counter when there is a message on screen
+  // const screenDelay =
+  // currentMessage &&
+  // setTimeout(() => {
+  // dispatch({
+  // Remove screen message from redux
+  // type: CLEAR_SCREEN_MESSAGE,
+  // });
+  // }, duration);
+  // return () => {
+  // Remove setTimeout
+  // clearTimeout(screenDelay);
+  // };
+
+  // if (currentMessage) {
+  // dispatch({
+  //   // Remove screen message from redux
+  //   type: CLEAR_SCREEN_MESSAGE,
+  // });
+  // }
+  // }, [dispatch, currentMessage]);
 
   const handleClose = () => {
     dispatch({

@@ -5,13 +5,24 @@ import "./login.css";
 import typeWriter from "./../../../assets/img/type-writer.svg";
 import { loginSchema } from "../../_helper/validator/schema";
 import { FormNavbar } from "../../layouts/navbar/FormNavbar";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { login } from "../../../redux/user/actions/user.actions";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { pageurl } from "../../pageurl";
 
 export const Login = () => {
   const dispatch = useDispatch();
   const [nextStep, setnextStep] = useState("Password");
+  const history = useHistory();
+
+  // Get user jwt token
+  const token = localStorage.getItem("jwt-token");
+
+  // Redirect authenticated users
+  if (token) {
+    history.push(pageurl.DASHBOARD);
+  }
+
   return (
     <React.Fragment>
       <FormNavbar loginPage={true} />
@@ -20,7 +31,6 @@ export const Login = () => {
           initialValues={{
             username: "",
             password: "",
-            email: "",
           }}
           // Yup should validate form
           validationSchema={loginSchema}
@@ -82,7 +92,7 @@ export const Login = () => {
                   type="submit"
                   disabled={isSubmitting}
                 >
-                  Login
+                  {isSubmitting ? "Please wait..." : "Login"}
                 </button>
                 <div className="forgot-password">
                   <Link to="reset-password">I forgot my password 😫</Link>

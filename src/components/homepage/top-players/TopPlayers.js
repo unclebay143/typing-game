@@ -1,75 +1,121 @@
-import React, { useState } from "react";
+// React
+import React, { useEffect, useState } from "react";
+// Styles
 import "./top-players.css";
-// import wavingHand from './../../../assets/img/waving-hand.gif';
 
-// FONT-AWESOME
+// Axios
+import axios from "axios";
+import {
+  BASE_URL,
+  LOAD_ALL_PLAYERS,
+  RANK_PLAYERS,
+} from "../../../redux/user/service.js/root-endpoints";
+
+// Images
+import wavingHand from "./../../../assets/img/waving-hand.gif";
+
+// Component
+import { TopPlayersCard } from "./TopPlayersCard";
+import { SET_SCREEN_MESSAGE } from "../../../redux/types";
+import { useDispatch } from "react-redux";
+import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar, faStarHalfAlt } from "@fortawesome/free-solid-svg-icons";
-import { faTwitter } from "@fortawesome/free-brands-svg-icons";
-
-// LAYOUT
-import { Button, RegularButton } from "../../layouts/button/Button";
-
-const topPlayers = (
-  <div className="top-player">
-    <div className="left-info">
-      <div className="top-player--image">
-        <img src="http://github.com/unclebay143.png" alt="top player avatar" />
-      </div>
-      <div className="player-information">
-        <h3 className="player-name">Ayodele Samuel Adebayo</h3>
-        <div className="player-details">
-          <div className="player-star">
-            <FontAwesomeIcon icon={faStar} className="checked-rank" />
-            <FontAwesomeIcon icon={faStarHalfAlt} className="checked-rank" />
-            <FontAwesomeIcon icon={faStar} />
-            <FontAwesomeIcon icon={faStar} />
-            <FontAwesomeIcon icon={faStar} />
-          </div>
-          <p className="score-time"> 123wpm - 2 days ago</p>
-        </div>
-      </div>
-    </div>
-    <div className="right-info">
-      <RegularButton
-        linkUrl="https://www.twitter.com/unclebigbay143"
-        look="custom--btn-touch"
-        label="Twitter"
-        icon={faTwitter}
-        target="_blank"
-      />
-    </div>
-  </div>
-);
+import { rankPlayers } from "./rankPlayers";
 
 export const TopPlayers = () => {
   const [showAll, setShowAll] = useState(false);
-  const top10 = new Array(showAll ? 10 : 3).fill(topPlayers);
+  const [isLoading, setIsLoading] = useState(true);
+  const [topPlayers, setTopPlayers] = useState();
+  const dispatch = useDispatch();
 
+  useEffect(() => {
+    // Get all players
+    const fetchTopPlayers = async () => {
+      try {
+        const players = await axios.get(BASE_URL + LOAD_ALL_PLAYERS);
+        if (players) {
+          // Sort top players from current lead to least
+          const descendingOrderOfPlayers = players.data.sort((a, b) => {
+            // Add the wpm and accuracy to get the highest
+            return b.wpm + a.accuracy - (a.wpm + a.accuracy);
+          });
+
+          // Rank the user in the database
+          rankPlayers(descendingOrderOfPlayers);
+
+          // Remove loader
+          setIsLoading(false);
+
+          // Store the sorted top players to the state
+          setTopPlayers(descendingOrderOfPlayers);
+        }
+      } catch (error) {
+        console.log(error);
+        dispatch({
+          type: SET_SCREEN_MESSAGE,
+          payload: {
+            type: "danger",
+            message: "Can't Fetch Top players 😪",
+          },
+        });
+      }
+    };
+
+    fetchTopPlayers();
+  }, [dispatch]);
+
+  // Number of topPlayers to display
+  const topPlayerLimit = showAll ? 10 : 20;
+
+  // Handle the show more button
   const handleShowAll = () => {
     return setShowAll(!showAll);
   };
+
+  // Show loader if the players have not been fetched
+  if (isLoading) {
+    return (
+      <div className="rank-section loading">
+        <FontAwesomeIcon icon={faSpinner} spin />
+      </div>
+    );
+  }
+
   return (
     <React.Fragment>
       <section className="rank-section">
         <div className="welcome-user">
           <div className="greeting-text">
             <h2>How is coding today?</h2>
-            {/* <h2>Welcome back</h2> when logged in*/}
+            {/* <h2>Welcome back</h2> when logged in */}
           </div>
-          {/* <img src={wavingHand} alt="waving hand"/> */}
+          <img src={wavingHand} alt="waving hand" />
         </div>
         <div className="rank-board">
           <div className="rank-board--heading">
             <h3>Top 10 Fastest Typist</h3>
           </div>
-          <div className="ranking">{top10}</div>
+          {topPlayers
+            ?.slice(0, topPlayerLimit)
+            .map(({ wpm, accuracy, id, time, userName }) => {
+              return (
+                <TopPlayersCard
+                  key={id}
+                  wpm={wpm}
+                  accuracy={accuracy}
+                  userName={userName}
+                  id={id}
+                  gameTime={time}
+                />
+              );
+            })}
           <div className="board-toggler">
-            <Button
-              func={handleShowAll}
-              label={`${showAll ? "Show less" : "Show more"}`}
-              look="custom--btn-outline-primary"
-            />
+            <button
+              onClick={handleShowAll}
+              className="button custom--btn custom--btn-outline-primary"
+            >
+              {showAll ? "Show less" : "Show more"}
+            </button>
           </div>
         </div>
       </section>

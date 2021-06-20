@@ -5,16 +5,38 @@ import "./gamearea.css";
 import { TypingBoard } from "../typingboard/TypingBoard";
 import { Sidebar } from "../sidebar/Sidebar";
 import { GameResult } from "../GameResult.js/GameResult";
-import { Route, Switch } from "react-router";
+import { Route, Switch, useHistory } from "react-router";
 import { pageurl } from "../../pageurl";
+import {
+  loadPlayerGameRecord,
+  loadProfile,
+} from "../../../redux/user/actions/user.actions";
+import { useDispatch } from "react-redux";
 
 export const GameArea = () => {
   // STATE TO BE PASSED TO SIDEBAR FOR TOGGLE
   let prefferedTheme = localStorage.getItem("_dark_theme");
   const [darkTheme, setDarkTheme] = useState(prefferedTheme);
+  const dispatch = useDispatch();
+  const history = useHistory();
+
+  // Get user jwt token
+  const token = localStorage.getItem("jwt-token");
+
+  // Set user preferred theme
   useEffect(() => {
     setDarkTheme(prefferedTheme);
   }, [prefferedTheme]);
+
+  // Load user profile
+  useEffect(() => {
+    dispatch(loadProfile());
+    dispatch(loadPlayerGameRecord());
+  }, []);
+
+  if (!token) {
+    history.push(pageurl.LOGIN);
+  }
 
   return (
     <React.Fragment>

@@ -1,14 +1,21 @@
-.game-container{
-    min-height: 100vh;
-    padding: 10rem 6vw;    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: var(--poppins);
-    background-color: var(--white-color);
-    transition: 0.5s ease;
+.game-container {
+  min-height: 100vh;
+  padding: 10rem 6vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--poppins);
+  background-color: var(--white-color);
+  transition: 0.5s ease;
+  background: linear-gradient(394deg, var(--touch-color), transparent);
 }
 
-.dark.game-container{
-    background: var(--touch-color);
+.dark.game-container {
+  background: var(--touch-color);
+}
+
+@media (max-width: 900px) {
+  .game-container {
+    background-color: var(--touch-color);
+  }
 }

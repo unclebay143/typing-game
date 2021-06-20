@@ -15,7 +15,7 @@ import { useDispatch } from "react-redux";
 
 export const GameArea = () => {
   // STATE TO BE PASSED TO SIDEBAR FOR TOGGLE
-  let prefferedTheme = localStorage.getItem("_dark_theme");
+  let prefferedTheme = JSON.parse(localStorage.getItem("_dark_theme"));
   const [darkTheme, setDarkTheme] = useState(prefferedTheme);
   const dispatch = useDispatch();
   const history = useHistory();

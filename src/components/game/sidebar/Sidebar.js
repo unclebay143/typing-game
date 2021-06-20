@@ -14,13 +14,12 @@ export const Sidebar = ({ themeCallback }) => {
   const location = useLocation();
   const [showHomeButton, setShowHomeButton] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
-  let prefferedTheme = localStorage.getItem("_dark_theme");
+  let prefferedTheme = JSON.parse(localStorage.getItem("_dark_theme"));
 
   // check if the current path is the dashboard
   const currentPageNotDashboard =
     location.pathname === pageurl.DASHBOARD ? false : true;
 
-  console.log(currentPageNotDashboard);
   useEffect(() => {
     setDarkTheme(prefferedTheme);
 

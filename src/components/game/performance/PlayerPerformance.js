@@ -16,26 +16,22 @@ export const PlayerPerformance = ({ currentGameWpm, currentGameAccuracy }) => {
         }`}
         onClick={() => setTogglePerformance(!togglePerformance)}
       >
-        {gameRecord && (
-          <React.Fragment>
-            <div className="rank-info">
-              <FontAwesomeIcon icon={faStar} />
-              <span className="position">{rank}</span>
-            </div>
-            <div className="current-performance">
-              <span className="wpm">WPM: {currentGameWpm} </span> |{" "}
-              <span className="accuracy"> ACC: {currentGameAccuracy}%</span>
-            </div>
-            <div
-              className={`full-performance ${
-                togglePerformance && "display-full-performance"
-              }`}
-            >
-              <p>ACCURACY: {accuracy}%</p>
-              <p>WPM: {wpm}</p>
-            </div>
-          </React.Fragment>
-        )}
+        <div className="rank-info">
+          <FontAwesomeIcon icon={faStar} />
+          <span className="position">{rank || "0"}</span>
+        </div>
+        <div className="current-performance">
+          <span className="wpm">WPM: {currentGameWpm} </span> |{" "}
+          <span className="accuracy"> ACC: {currentGameAccuracy}%</span>
+        </div>
+        <div
+          className={`full-performance ${
+            togglePerformance && "display-full-performance"
+          }`}
+        >
+          <p>ACCURACY: {accuracy}%</p>
+          <p>WPM: {wpm}</p>
+        </div>
       </section>
     </React.Fragment>
   );

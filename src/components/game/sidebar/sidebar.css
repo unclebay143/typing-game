@@ -29,7 +29,7 @@ option {
 }
 
 .navigation-icon {
-  margin-top: 3rem;
+  margin-top: 6rem;
   padding-right: 0.5rem;
   text-align: right;
 }
@@ -67,6 +67,9 @@ option {
 @media (min-width: 900px) {
   .sidebar {
     overflow: unset;
+  }
+  .navigation-icon {
+    margin-top: 3rem;
   }
   .theme-toggle {
     text-align: center;

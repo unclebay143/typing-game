@@ -48,8 +48,7 @@
 .show-smiley {
   color: var(--grey-color);
   line-height: 2;
-  /* z-index: 999; */
-  /* position: relative; */
+  text-align: center;
 }
 
 .typing-text {
@@ -121,5 +120,9 @@
   .typing-wrapper {
     margin-bottom: 3rem;
     width: 88%;
+  }
+
+  .show-smiley {
+    text-align: left;
   }
 }

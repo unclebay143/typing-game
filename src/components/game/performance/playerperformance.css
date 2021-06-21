@@ -11,6 +11,7 @@
   border-bottom-left-radius: 0.4rem;
   cursor: pointer;
   overflow: hidden;
+  width: 350px;
 }
 
 /* SHOW FULL PERFORMANCE */

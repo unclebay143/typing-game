@@ -6,11 +6,10 @@ import "./../welcome/welcome.css";
 import "./passwordConfirmation.css";
 
 // Component
-import wavingHand from "./../../../assets/img/waving-hand.gif";
+// import wavingHand from "./../../../assets/img/waving-hand.gif";
 import { pageurl } from "../../pageurl";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMailBulk } from "@fortawesome/free-solid-svg-icons";
 import { faMailchimp } from "@fortawesome/free-brands-svg-icons";
 
 export const PasswordConfirmation = () => {

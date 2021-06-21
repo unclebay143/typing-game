@@ -52,9 +52,6 @@ const loginPlayer = async (username, password) => {
       },
     });
 
-    // Store jwt to localstorage
-    localStorage.setItem("jwt-token", res.data.token);
-
     // Return response to action
     return res;
   } catch (error) {

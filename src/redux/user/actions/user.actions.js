@@ -1,9 +1,11 @@
 import {
+  CLEAR_SCREEN_MESSAGE,
   LOGIN_SUCCESSFULL,
   PLAYER_GAME_RECORD_LOADED,
   REGISTRATION_SUCCESSFUL,
   SET_SCREEN_MESSAGE,
   USER_LOADED,
+  LOGOUT,
 } from "../../types";
 import UserService from "../service.js/user.services";
 
@@ -69,8 +71,16 @@ export const login =
           type: LOGIN_SUCCESSFULL,
         });
 
+        // Clear the current message
+        dispatch({
+          type: CLEAR_SCREEN_MESSAGE,
+        });
+
         // Stop form loading state
         setSubmitting(false);
+
+        // Store jwt to localstorage
+        localStorage.setItem("jwt-token", response.data.token);
 
         // Redirect user to dashboard
         window.location.assign("/#/dashboard");
@@ -113,4 +123,17 @@ export const loadPlayerGameRecord = () => async (dispatch) => {
   } catch (error) {
     console.log(error);
   }
+};
+
+// Logout
+export const logOut = () => (dispatch) => {
+  dispatch({
+    type: LOGOUT,
+  });
+
+  // remove token from local-storage
+  localStorage.removeItem("jwt-token");
+
+  // Redirect user to landing page
+  window.location.assign("/#/");
 };

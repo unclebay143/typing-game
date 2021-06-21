@@ -53,7 +53,7 @@
 }
 
 .typing-text {
-  width: 100%;
+  width: 88%;
   white-space: nowrap;
   overflow: hidden;
 }
@@ -80,7 +80,7 @@
 }
 
 .typing-input-wrapper {
-  width: 99%;
+  width: 88%;
   border: 2px solid var(--touch-color);
   background-color: var(--white-color);
   border: 2px solid var(--touch-color);
@@ -120,5 +120,6 @@
 
   .typing-wrapper {
     margin-bottom: 3rem;
+    width: 88%;
   }
 }

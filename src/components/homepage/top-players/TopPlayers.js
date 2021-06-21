@@ -8,7 +8,6 @@ import axios from "axios";
 import {
   BASE_URL,
   LOAD_ALL_PLAYERS,
-  RANK_PLAYERS,
 } from "../../../redux/user/service.js/root-endpoints";
 
 // Images

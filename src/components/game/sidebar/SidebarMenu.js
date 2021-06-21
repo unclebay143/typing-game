@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./sidebar-menu.css";
 
 // Image
@@ -16,25 +16,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import { pageurl } from "../../pageurl";
 import { useDispatch } from "react-redux";
-import { SET_SCREEN_MESSAGE } from "../../../redux/types";
+import { logOut } from "../../../redux/user/actions/user.actions";
+import { comingSoon } from "../../comingSoon";
 
 export const SidebarMenu = ({ openMenu }) => {
   const dispatch = useDispatch();
 
-  const comingSoon = () => {
-    dispatch({
-      type: SET_SCREEN_MESSAGE,
-      payload: {
-        type: "danger",
-        message: "Coming soon 🚀",
-      },
-    });
-  };
   return (
     <React.Fragment>
       <div className={`sidebar-menu ${openMenu ? "open" : "closed"}`}>
         <section className="sidebar-menu--1">
-          <img src={dummyImage}></img>
+          <img src={dummyImage} alt="empty profile avatar" />
           <div>
             unclebigbay <br />
             unclebigbay@gmail.com
@@ -59,7 +51,7 @@ export const SidebarMenu = ({ openMenu }) => {
             href={pageurl.HOMEPAGE}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => comingSoon()}
+            onClick={() => dispatch(comingSoon())}
           >
             <div>
               <FontAwesomeIcon icon={faUserFriends} className="logout-icon" />
@@ -74,7 +66,7 @@ export const SidebarMenu = ({ openMenu }) => {
             Update profile
           </Link>
         </section>
-        <section className="sidebar-menu--3">
+        <section className="sidebar-menu--3" onClick={() => dispatch(logOut())}>
           <FontAwesomeIcon icon={faSignOutAlt} className="logout-icon" />
           <span>Log out</span>
         </section>

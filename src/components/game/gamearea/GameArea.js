@@ -32,7 +32,9 @@ export const GameArea = () => {
   useEffect(() => {
     dispatch(loadProfile());
     dispatch(loadPlayerGameRecord());
-  }, []);
+  }, [dispatch]);
+
+  console.count();
 
   if (!token) {
     history.push(pageurl.LOGIN);

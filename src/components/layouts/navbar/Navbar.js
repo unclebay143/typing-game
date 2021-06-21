@@ -7,8 +7,12 @@ import "./navbar.css";
 import { Button } from "../button/Button";
 import { pageurl } from "../../pageurl";
 import { Link } from "react-router-dom";
+import { comingSoon } from "../../comingSoon";
+import { useDispatch } from "react-redux";
 
 export const Navbar = () => {
+  const dispatch = useDispatch();
+
   return (
     <React.Fragment>
       <header>
@@ -35,7 +39,12 @@ export const Navbar = () => {
               >
                 Team
               </a>
-              <Link to={pageurl.DASHBOARD}>Demo</Link>
+              <Link
+                to={pageurl.HOMEPAGE}
+                onClick={() => dispatch(comingSoon("demo"))}
+              >
+                Demo
+              </Link>
               <a
                 href="https://www.buymeacoffee.com/unclebigbay"
                 target="_blank"

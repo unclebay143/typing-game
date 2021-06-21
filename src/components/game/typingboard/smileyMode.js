@@ -1,5 +1,4 @@
 export const smileyMode = (wpm, accuracy) => {
-  console.log(wpm > 20);
   if (wpm === 0) return "👋";
   if (wpm > 100) return "💪";
   if (wpm > 80) return "😜 Boss";

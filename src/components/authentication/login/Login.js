@@ -1,13 +1,12 @@
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import React, { useState } from "react";
-import { Button } from "../../layouts/button/Button";
 import "./login.css";
 import typeWriter from "./../../../assets/img/type-writer.svg";
 import { loginSchema } from "../../_helper/validator/schema";
 import { FormNavbar } from "../../layouts/navbar/FormNavbar";
 import { Link, useHistory } from "react-router-dom";
 import { login } from "../../../redux/user/actions/user.actions";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { pageurl } from "../../pageurl";
 
 export const Login = () => {
@@ -23,6 +22,7 @@ export const Login = () => {
     history.push(pageurl.DASHBOARD);
   }
 
+  console.count();
   return (
     <React.Fragment>
       <FormNavbar loginPage={true} />

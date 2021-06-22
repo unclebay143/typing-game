@@ -6,10 +6,7 @@ export const registerationSchema = yup.object().shape({
   username: yup.string().required("Username is required"),
   password: yup
     .string()
-    .matches(
-      /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/,
-      "Not strong enough"
-    )
+    .min(5, "Not strong enough")
     .required("Password is required"),
 });
 

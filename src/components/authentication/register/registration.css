@@ -59,6 +59,9 @@ form {
   border-radius: 4px;
   border: 2px solid var(--white-color);
   font-family: var(--poppins);
+}
+
+#username {
   text-transform: lowercase;
 }
 

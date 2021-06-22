@@ -52,7 +52,6 @@ form {
   border-radius: 4px;
   border: 2px solid var(--white-color);
   font-family: var(--poppins);
-  text-transform: lowercase;
 }
 
 .login .input-wrapper input:focus {

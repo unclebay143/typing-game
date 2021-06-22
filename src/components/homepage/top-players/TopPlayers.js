@@ -91,7 +91,7 @@ export const TopPlayers = () => {
             <h2>How is coding today?</h2>
             {/* <h2>Welcome back</h2> when logged in */}
           </div>
-          <img src={wavingHand} alt="waving hand" />
+          <img src={wavingHand} alt="waving hand" className="waving-hand" />
         </div>
         <div className="rank-board">
           <div className="rank-board--heading">

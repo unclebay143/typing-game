@@ -31,6 +31,10 @@
   padding-bottom: 2rem;
 }
 
+.waving-hand {
+  display: none;
+}
+
 .greeting-text {
   font-size: 1.9rem;
   display: block;
@@ -83,7 +87,6 @@
 .top-player--image img {
   border-radius: 5px;
   height: 100%;
-  width: 100%;
 }
 
 .player-information {
@@ -132,8 +135,9 @@
     margin-top: 50px;
   }
 
-  .greeting-text {
+  .waving-hand {
     /* font-size: 2.9rem; */
+    display: inline;
   }
 
   .top-player {

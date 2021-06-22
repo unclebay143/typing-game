@@ -37,9 +37,6 @@ export const TopPlayersCard = ({ userName, wpm, gameTime, accuracy }) => {
             <div className="player-star">
               <FontAwesomeIcon icon={faStar} className="checked-rank" />
               <FontAwesomeIcon icon={faStarHalfAlt} className="checked-rank" />
-              <FontAwesomeIcon icon={faStar} />
-              <FontAwesomeIcon icon={faStar} />
-              <FontAwesomeIcon icon={faStar} />
             </div>
             <p className="score-time">
               {" "}

@@ -5,3 +5,4 @@ export const LOAD_USER_ENDPOINT = "/players/profile";
 export const LOAD_ALL_PLAYERS = "/players/all";
 export const RANK_PLAYERS = "/players/rank";
 export const LOAD_PLAYER_GAME_RECORD = "/players/game-record";
+export const UPDATE_GAME_RECORD = "/games/update";

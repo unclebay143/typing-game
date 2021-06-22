@@ -16,8 +16,7 @@
 }
 
 .rank-info svg {
-  color: var(--grey-color);
-  color: orange;
+  color: var(--orange-color);
 }
 
 .rank-info .position {
@@ -80,7 +79,6 @@
 
 .typing-input-wrapper {
   width: 88%;
-  border: 2px solid var(--touch-color);
   background-color: var(--white-color);
   border: 2px solid var(--touch-color);
 }

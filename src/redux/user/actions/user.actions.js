@@ -7,7 +7,7 @@ import {
   USER_LOADED,
   LOGOUT,
 } from "../../types";
-import UserService from "../service.js/user.services";
+import UserService from "../service/user.services";
 
 // Registration
 export const register =

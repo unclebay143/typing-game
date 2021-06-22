@@ -8,12 +8,15 @@ import "./sidebar.css";
 import dummyImage from "./../../../assets/img/no-image-avatar.png";
 
 import { SidebarMenu } from "./SidebarMenu";
+import { comingSoon } from "../../comingSoon";
+import { useDispatch } from "react-redux";
 
 export const Sidebar = ({ themeCallback }) => {
   const [darkTheme, setDarkTheme] = useState(false);
   const location = useLocation();
   const [showHomeButton, setShowHomeButton] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
+  const dispatch = useDispatch();
   let prefferedTheme = JSON.parse(localStorage.getItem("_dark_theme"));
 
   // check if the current path is the dashboard
@@ -48,7 +51,10 @@ export const Sidebar = ({ themeCallback }) => {
       <aside className="sidebar">
         <section className="sidebar-items-top">
           <div className="select-pro-language">
-            <select className="form-control d-none">
+            <select
+              className="form-control d-none"
+              onChange={() => dispatch(comingSoon("Language Selection"))}
+            >
               <option>javascript</option>
               <option>html</option>
               <option>css</option>

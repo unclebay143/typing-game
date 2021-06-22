@@ -8,7 +8,7 @@ import axios from "axios";
 import {
   BASE_URL,
   LOAD_ALL_PLAYERS,
-} from "../../../redux/user/service.js/root-endpoints";
+} from "../../../redux/user/service/root-endpoints";
 
 // Images
 import wavingHand from "./../../../assets/img/waving-hand.gif";
@@ -32,12 +32,15 @@ export const TopPlayers = () => {
     const fetchTopPlayers = async () => {
       try {
         const players = await axios.get(BASE_URL + LOAD_ALL_PLAYERS);
+
         if (players) {
           // Sort top players from current lead to least
           const descendingOrderOfPlayers = players.data.sort((a, b) => {
             // Add the wpm and accuracy to get the highest
             return b.wpm + a.accuracy - (a.wpm + a.accuracy);
           });
+
+          console.log(descendingOrderOfPlayers);
 
           // Rank the user in the database
           rankPlayers(descendingOrderOfPlayers);

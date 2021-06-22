@@ -1,15 +1,18 @@
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import React from "react";
+import { useSelector } from "react-redux";
+import { useHistory } from "react-router";
 import { RegularButton } from "../../layouts/button/Button";
+import { pageurl } from "../../pageurl";
 import "./gameresult.css";
 
-export const GameResult = (newRecord = false) => {
-  //   const newRecordMessage = newRecord && (
-  //     <div className="new-record-heading">
-  //       <span>New record</span>
-  //     </div>
-  //   );
+export const GameResult = () => {
+  const { wpm, accuracy } = useSelector((state) => state.game);
+  const history = useHistory();
 
+  if (!wpm && !accuracy) {
+    history.push(pageurl.DASHBOARD);
+  }
   return (
     <React.Fragment>
       <div className="result-container">
@@ -27,8 +30,8 @@ export const GameResult = (newRecord = false) => {
             <span>ACCURACY</span>
           </div>
           <div className="point-heading">
-            <span>22</span>
-            <span>50%</span>
+            <span>{wpm}</span>
+            <span>{accuracy}%</span>
           </div>
         </section>
 
@@ -38,11 +41,11 @@ export const GameResult = (newRecord = false) => {
             type="custom--btn-outline twitter-share-button"
             target="_blank"
             rel="noopener noreferrer"
-            linkUrl="https://twitter.com/intent/tweet?text=I just scored 123Wpm {on typing.com by @unclebigbay143}"
+            linkUrl={`https://twitter.com/intent/tweet?text=I just scored ${wpm}wpm and had ${accuracy} accuracies on developers typing game website developed by @unclebigbay143 @hashnode @harperdbio`}
             icon={faTwitter}
             label="Tweet"
-            abbrTitle="I just scored"
-          ></RegularButton>
+            abbrTitle="Share your achievement"
+          />
         </section>
       </div>
     </React.Fragment>

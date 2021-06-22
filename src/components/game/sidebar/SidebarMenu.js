@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./sidebar-menu.css";
 
 // Image
@@ -15,12 +15,21 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import { pageurl } from "../../pageurl";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { logOut } from "../../../redux/user/actions/user.actions";
 import { comingSoon } from "../../comingSoon";
 
 export const SidebarMenu = ({ openMenu }) => {
   const dispatch = useDispatch();
+  const { user } = useSelector((state) => state.user);
+  const [playerProfile, setPlayerProfile] = useState({});
+  const { userName, email } = playerProfile;
+
+  useEffect(() => {
+    if (user) {
+      setPlayerProfile(user);
+    }
+  }, [user]);
 
   return (
     <React.Fragment>
@@ -28,43 +37,61 @@ export const SidebarMenu = ({ openMenu }) => {
         <section className="sidebar-menu--1">
           <img src={dummyImage} alt="empty profile avatar" />
           <div>
-            unclebigbay <br />
-            unclebigbay@gmail.com
+            {userName} <br />
+            {email}
           </div>
         </section>
         <section className="sidebar-menu--2">
-          <Link to="">
-            <div>
+          <div
+            className="sidebar-link"
+            // href="#"
+            // target="_blank"
+            // rel="noopener noreferrer"
+            onClick={() => dispatch(comingSoon("View profile"))}
+          >
+            <div className="link-icon">
               <FontAwesomeIcon icon={faUserCircle} className="logout-icon" />
             </div>
             View profile
-          </Link>
-
-          <a href={pageurl.HOMEPAGE} target="_blank" rel="noopener noreferrer">
-            <div>
-              <FontAwesomeIcon icon={faBorderAll} className="logout-icon" />
-            </div>
-            Leader Board
-          </a>
+          </div>
 
           <a
             href={pageurl.HOMEPAGE}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => dispatch(comingSoon())}
+            className="sidebar-link"
           >
-            <div>
+            <div className="link-icon">
+              <FontAwesomeIcon icon={faBorderAll} className="logout-icon" />
+            </div>
+            Leader Board
+          </a>
+
+          <div
+            className="sidebar-link"
+            // href="#"
+            // target="_blank"
+            // rel="noopener noreferrer"
+            onClick={() => dispatch(comingSoon("Multiplayer"))}
+          >
+            <div className="link-icon">
               <FontAwesomeIcon icon={faUserFriends} className="logout-icon" />
             </div>
             Multi Player
-          </a>
+          </div>
 
-          <Link to="">
-            <div>
+          <div
+            className="sidebar-link"
+            // href="#"
+            // target="_blank"
+            // rel="noopener noreferrer"
+            onClick={() => dispatch(comingSoon("Update profile"))}
+          >
+            <div className="link-icon">
               <FontAwesomeIcon icon={faUserEdit} className="logout-icon" />
             </div>
             Update profile
-          </Link>
+          </div>
         </section>
         <section className="sidebar-menu--3" onClick={() => dispatch(logOut())}>
           <FontAwesomeIcon icon={faSignOutAlt} className="logout-icon" />

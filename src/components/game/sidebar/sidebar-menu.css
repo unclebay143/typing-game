@@ -36,7 +36,7 @@
     flex-direction: column;
   }
 
-  .sidebar-menu--2 a {
+  .sidebar-menu--2 .sidebar-link {
     color: var(--grey-color);
     text-decoration: none;
     line-height: 2.5;
@@ -45,13 +45,14 @@
     font-size: 0.9rem;
     display: flex;
     margin-bottom: 1rem;
+    cursor: pointer;
   }
 
-  .sidebar-menu--2 a:hover {
+  .sidebar-menu--2 .sidebar-link:hover {
     color: var(--white-color);
   }
 
-  .sidebar-menu--2 div {
+  .sidebar-menu--2 .link-icon {
     width: 3rem;
   }
 

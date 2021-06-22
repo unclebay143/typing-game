@@ -8,6 +8,7 @@ export const codeQuotes = {
     "window.location.assign('me');",
     "window.location.assign('me');",
     "window;",
+    "window;",
   ],
   skin: [
     "document.getElementById('skin');",

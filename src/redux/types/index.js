@@ -7,3 +7,6 @@ export const LOGIN_SUCCESSFULL = "LOGIN_SUCCESSFULL";
 export const USER_LOADED = "USER_LOADED";
 export const PLAYER_GAME_RECORD_LOADED = "PLAYER_GAME_RECORD_LOADED";
 export const LOGOUT = "LOGOUT";
+
+// Games
+export const LAST_GAME_RESULT = "LAST_GAME_RESULT";

@@ -43,6 +43,10 @@
   font-weight: 600;
 }
 
+.current-performance {
+  text-align: center;
+}
+
 .current-performance .wpm {
   margin-right: 1rem;
 }

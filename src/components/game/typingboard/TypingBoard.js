@@ -5,9 +5,16 @@ import { codeQuotes } from "./codeQuotes";
 import { currentTime } from "../../_helper/time/time";
 import { PlayerPerformance } from "../performance/PlayerPerformance";
 import { smileyMode } from "./smileyMode";
+import { Timer } from "./Timer";
+import { pageurl } from "../../pageurl";
+import { useHistory } from "react-router";
+import { updatePlayerGameRecord } from "../../../redux/game/actions/game.action";
+import { useDispatch } from "react-redux";
 
 export const TypingBoard = () => {
   const { javascript } = codeQuotes;
+  const history = useHistory();
+  const dispatch = useDispatch();
   const [preferredLanguage, setPreferredLanguage] = useState(javascript);
   const [outgoingChars, setOutgoingChars] = useState("");
   const [currentCharBlockIndex, setCurrentCharBlockIndex] = useState(0);
@@ -25,40 +32,17 @@ export const TypingBoard = () => {
   const [wpm, setWpm] = useState(0);
   const [accuracy, setAccuracy] = useState(0);
   const [typedChars, setTypedChars] = useState("");
-  const [gameOver, setGameOver] = useState(false);
   const [darkTheme, setDarkTheme] = useState("");
   let prefferedTheme = JSON.parse(localStorage.getItem("_dark_theme"));
+
+  // Count down
+  const [timeRemaining, setTimeRemaining] = useState(30);
+  const [isTimeRunning, setIsTimeRunning] = useState(false);
 
   // Set user preferred theme
   useEffect(() => {
     setDarkTheme(prefferedTheme);
   }, [prefferedTheme]);
-
-  const nextCode = (array) => {
-    // FUNCTION THAT GETS THE NEXT CODE FROM THE ARRAY
-
-    if (
-      currentCharBlockIndex >= 0 &&
-      currentCharBlockIndex < array.length - 1
-    ) {
-      // ONLY RUN IF THERE IS MORE CODE
-      // GET THE NEXT CODE ITEM
-      const nextItem = array[currentCharBlockIndex + 1];
-
-      // UPDATE THE setCurrentCharBlockIndex WITH THE CURRENT ITEM INDEX
-      setCurrentCharBlockIndex(currentCharBlockIndex + 1);
-
-      return nextItem;
-    }
-
-    if (currentCharBlockIndex === array.length - 1) {
-      setGameOver(true);
-      handleGameOver();
-    }
-
-    // RETURN EMPTY STRING WHEN THE ARRAY IS ZERO INSTEAD OF FUNCTION DEFUALT UNDEFINED
-    return "";
-  };
 
   useKeyPress((key) => {
     // 1 TEMPORARY HOLDER FOR LATER USE
@@ -91,7 +75,10 @@ export const TypingBoard = () => {
 
     // 1 -START TIME WHEN THE USER BEGINS TO TYPE
     if (!startTime) {
+      // Set the typing start time
       setStartTime(currentTime());
+      // Start the count down
+      setIsTimeRunning(true);
     }
 
     /* WPM LOGIC */
@@ -104,7 +91,7 @@ export const TypingBoard = () => {
       //5 - TIME SPENT TYPING
       const durationInMinutes = (currentTime() - startTime) / 60000.0;
 
-      //6 // GET WPM
+      //6 // SET WPM
       setWpm(((wordCount + 1) / durationInMinutes).toFixed(2));
     }
 
@@ -122,9 +109,43 @@ export const TypingBoard = () => {
     );
   });
 
-  const handleGameOver = () => {
-    console.log(wpm);
+  // FUNCTION THAT GETS THE NEXT CODE FROM THE ARRAY
+  const nextCode = (array) => {
+    // ONLY RUN IF THERE IS MORE CODE
+    if (
+      currentCharBlockIndex >= 0 &&
+      currentCharBlockIndex < array.length - 1
+    ) {
+      // GET THE NEXT CODE ITEM
+      const nextItem = array[currentCharBlockIndex + 1];
+
+      // UPDATE THE setCurrentCharBlockIndex WITH THE CURRENT ITEM INDEX
+      setCurrentCharBlockIndex(currentCharBlockIndex + 1);
+
+      return nextItem;
+    }
+
+    // RETURN EMPTY STRING WHEN THE ARRAY IS ZERO INSTEAD OF FUNCTION DEFAULT UNDEFINED
+    return "";
   };
+
+  useEffect(() => {
+    // HANDLE GAME TIMING
+    if (isTimeRunning && timeRemaining > 0) {
+      setTimeout(() => {
+        setTimeRemaining((time) => time - 1);
+      }, 1000);
+    } else if (timeRemaining === 0) {
+      endGame();
+    }
+  }, [timeRemaining, isTimeRunning]);
+
+  // EeND GAME
+  function endGame() {
+    setIsTimeRunning(false);
+    dispatch(updatePlayerGameRecord(Math.round(wpm), Math.round(accuracy)));
+    history.push(pageurl.GAME_RESULT);
+  }
 
   return (
     <React.Fragment>
@@ -134,16 +155,12 @@ export const TypingBoard = () => {
           currentGameAccuracy={accuracy}
         />
         <h1 className="no-mobile-version">Switch to pc</h1>
-        <h1 className="show-smiley">{smileyMode(wpm, accuracy)}</h1>
+        <h1 className="show-smiley">
+          {" "}
+          {timeRemaining} {smileyMode(wpm, accuracy)}
+        </h1>
         <section className={`typing-wrapper ${darkTheme ? "dark" : "light"}`}>
           <div className="typing-text">
-            {/* <code className="character-out">{outgoingChars}</code>
-            <code>
-              {currentChar}
-              {incomingChars}
-            </code>
-            <code className="instruction">(press space)</code> */}
-
             <code className="character-out">
               {(leftPadding + outgoingChars).slice(-20)}
             </code>

@@ -2,7 +2,10 @@ import * as yup from "yup";
 
 // REGISTRATION SCHEMA
 export const registerationSchema = yup.object().shape({
-  email: yup.string().email("Check your email").required("Email is required"),
+  email: yup
+    .string()
+    .email("Check your email address")
+    .required("Email is required"),
   username: yup.string().required("Username is required"),
   password: yup
     .string()

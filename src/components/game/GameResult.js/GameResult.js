@@ -1,8 +1,13 @@
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
+import {
+  faReply,
+  faReplyAll,
+  faRibbon,
+} from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router";
-import { RegularButton } from "../../layouts/button/Button";
+import { Button, RegularButton } from "../../layouts/button/Button";
 import { pageurl } from "../../pageurl";
 import "./gameresult.css";
 
@@ -10,9 +15,9 @@ export const GameResult = () => {
   const { wpm, accuracy } = useSelector((state) => state.game);
   const history = useHistory();
 
-  if (!wpm && !accuracy) {
-    history.push(pageurl.DASHBOARD);
-  }
+  // if (!wpm && !accuracy) {
+  //   history.push(pageurl.DASHBOARD);
+  // }
   return (
     <React.Fragment>
       <div className="result-container">
@@ -37,6 +42,12 @@ export const GameResult = () => {
 
         {/*  */}
         <section className="share-point">
+          <RegularButton
+            type="custom--btn-outline twitter-share-button"
+            linkUrl={`#${pageurl.DASHBOARD}`}
+            icon={faReply}
+            label="Play Again"
+          />
           <RegularButton
             type="custom--btn-outline twitter-share-button"
             target="_blank"

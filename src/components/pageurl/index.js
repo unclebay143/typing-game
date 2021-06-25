@@ -7,4 +7,5 @@ export const pageurl = {
   FORGOT_PASSWORD_CONFIRMATION: "/success",
   DASHBOARD: "/dashboard",
   GAME_RESULT: "/dashboard/result",
+  USER_PROFILE: "/dashboard/me",
 };

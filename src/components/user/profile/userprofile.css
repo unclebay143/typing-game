@@ -1,0 +1,27 @@
+.user {
+  color: var(--white-color);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.5;
+}
+
+.user img {
+  width: 30%;
+}
+
+.user .user-name {
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+
+.user .user-twitter-handle {
+  /* color: wheat; */
+}
+
+.user .user-rank {
+  line-height: 2;
+  font-weight: 600;
+}

@@ -42,25 +42,14 @@ export const SidebarMenu = ({ openMenu }) => {
           </div>
         </section>
         <section className="sidebar-menu--2">
-          <div
-            className="sidebar-link"
-            // href="#"
-            // target="_blank"
-            // rel="noopener noreferrer"
-            onClick={() => dispatch(comingSoon("View profile"))}
-          >
+          <a className="sidebar-link" href={`#${pageurl.USER_PROFILE}`}>
             <div className="link-icon">
               <FontAwesomeIcon icon={faUserCircle} className="logout-icon" />
             </div>
             View profile
-          </div>
+          </a>
 
-          <a
-            href={pageurl.HOMEPAGE}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="sidebar-link"
-          >
+          <a href={pageurl.HOMEPAGE} className="sidebar-link">
             <div className="link-icon">
               <FontAwesomeIcon icon={faBorderAll} className="logout-icon" />
             </div>

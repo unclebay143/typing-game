@@ -52,9 +52,13 @@ export const Navbar = () => {
               >
                 Buy Me a coffee
               </a>
-              <a href="https://wa.link/sfy4nc"
-                              target="_blank"
-                              rel="noopener noreferrer">Contribute</a>
+              <a
+                href="https://wa.link/sfy4nc"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Contribute
+              </a>
             </div>
           </section>
           <section className="right-items">

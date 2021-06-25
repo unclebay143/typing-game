@@ -12,6 +12,7 @@ import {
   loadProfile,
 } from "../../../redux/user/actions/user.actions";
 import { useDispatch } from "react-redux";
+import { UserProfile } from "../../user/profile/UserProfile";
 
 export const GameArea = () => {
   // STATE TO BE PASSED TO SIDEBAR FOR TOGGLE
@@ -36,16 +37,17 @@ export const GameArea = () => {
 
   console.count();
 
-  if (!token) {
-    history.push(pageurl.LOGIN);
-  }
+  // if (!token) {
+  //   history.push(pageurl.LOGIN);
+  // }
 
   return (
     <React.Fragment>
       <main className={`game-container ${darkTheme ? "dark" : "light-mode"}`}>
         <Switch>
-          <Route path={pageurl.GAME_RESULT} component={GameResult} />
-          <Route path={pageurl.DASHBOARD} component={TypingBoard} />
+          <Route exact path={pageurl.GAME_RESULT} component={GameResult} />
+          <Route exact path={pageurl.DASHBOARD} component={TypingBoard} />
+          <Route exact path={pageurl.USER_PROFILE} component={UserProfile} />
         </Switch>
       </main>
       <Sidebar themeCallback={setDarkTheme} />

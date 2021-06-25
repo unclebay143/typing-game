@@ -2,8 +2,8 @@ export const codeQuotes = {
   javascript: [
     "const name = 'wilson williams'; // visitor name",
     "console.log(`welcome $name`); // greet visitor",
-    "window.location.assign('me');",
-    "window.location.assign('me');",
+    "for(let x=1; array.length > x; x++)",
+    "{if(array[x] === 'darkmode') return darkMode()}",
     "window.location.assign('me');",
     "window.location.assign('me');",
     "window.location.assign('me');",

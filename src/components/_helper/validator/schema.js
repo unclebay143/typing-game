@@ -23,3 +23,8 @@ export const loginSchema = yup.object().shape({
 export const forgotPasswordSchema = yup.object().shape({
   email: yup.string().email().required("Email is required"),
 });
+
+// UPDATE PROGILE
+export const updateProfileSchema = yup.object().shape({
+  twitterHandle: yup.string().required("🙏 Required"),
+});

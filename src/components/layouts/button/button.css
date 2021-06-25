@@ -55,3 +55,8 @@
   background-color: var(--touch-color);
   color: var(--white-color);
 }
+
+.custom--btn-primary {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+}

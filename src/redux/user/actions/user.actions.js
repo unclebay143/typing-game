@@ -113,6 +113,8 @@ export const loadProfile = () => async (dispatch) => {
 export const loadPlayerGameRecord = () => async (dispatch) => {
   try {
     const gameRecord = await UserService.loadPlayerGameRecord();
+    console.log(gameRecord);
+
     // Set user profile to redux
     if (gameRecord) {
       dispatch({

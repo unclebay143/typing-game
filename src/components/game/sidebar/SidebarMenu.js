@@ -69,18 +69,12 @@ export const SidebarMenu = ({ openMenu }) => {
             Multi Player
           </div>
 
-          <div
-            className="sidebar-link"
-            // href="#"
-            // target="_blank"
-            // rel="noopener noreferrer"
-            onClick={() => dispatch(comingSoon("Update profile"))}
-          >
+          <a className="sidebar-link" href={`#${pageurl.UPDATE_PROFILE}`}>
             <div className="link-icon">
               <FontAwesomeIcon icon={faUserEdit} className="logout-icon" />
             </div>
             Update profile
-          </div>
+          </a>
         </section>
         <section className="sidebar-menu--3" onClick={() => dispatch(logOut())}>
           <FontAwesomeIcon icon={faSignOutAlt} className="logout-icon" />

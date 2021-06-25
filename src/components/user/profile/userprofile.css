@@ -1,3 +1,7 @@
+.no-network {
+  color: var(--white-color);
+}
+
 .user {
   color: var(--white-color);
   padding: 2rem;
@@ -17,8 +21,17 @@
   font-size: 2rem;
 }
 
-.user .user-twitter-handle {
-  /* color: wheat; */
+.user .user-twitter-handle a {
+  color: var(--primary-color);
+  margin-left: 0.1rem;
+}
+
+.user-email-address {
+  margin-top: 1.5rem;
+}
+
+.user-email-address:hover {
+  text-decoration: underline;
 }
 
 .user .user-rank {

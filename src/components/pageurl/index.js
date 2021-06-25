@@ -8,4 +8,5 @@ export const pageurl = {
   DASHBOARD: "/dashboard",
   GAME_RESULT: "/dashboard/result",
   USER_PROFILE: "/dashboard/me",
+  UPDATE_PROFILE: "/dashboard/update",
 };

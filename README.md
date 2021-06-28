@@ -1,7 +1,10 @@
 # Typing Game for Developers to Boost their typing speed
 
+- ### Built with React JS
 
-## 1. Trainers will be ranked real-time on the landing page
+
+
+## 1. Players will be ranked real-time on the landing page
 
 ![image](https://user-images.githubusercontent.com/58919619/120639485-4bf6ae80-c469-11eb-897b-ac2953277cc6.png)
 

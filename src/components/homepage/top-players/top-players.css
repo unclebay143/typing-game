@@ -130,6 +130,10 @@
   text-align: center;
 }
 
+.board-toggler button {
+  padding: 0.75rem 1rem;
+}
+
 @media (min-width: 900px) {
   .rank-section {
     margin-top: 50px;

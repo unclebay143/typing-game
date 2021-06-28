@@ -23,7 +23,7 @@ export const ShareButtons = () => {
         <div>
           <input
             className="media-caption"
-            value="I just scored 123Wpm on"
+            value="Checkout developer typing game by @unclebigbay143 on https://developer-typing-game.netlify.app/#/"
             hidden
             readOnly
           />
@@ -31,7 +31,7 @@ export const ShareButtons = () => {
             <FontAwesomeIcon icon={faClipboard} />
           </abbr>
           <a
-            href="https://www.facebook.com/sharer/sharer.php?u=https://unclebigbay.hashnode.dev"
+            href="https://www.facebook.com/sharer/sharer.php?u=https://developer-typing-game.netlify.app/"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -44,14 +44,14 @@ export const ShareButtons = () => {
             target="_blank"
             rel="noopener noreferrer"
             data-size="large"
-            href="https://twitter.com/intent/tweet?text=I just scored 123Wpm on"
+            href="https://twitter.com/intent/tweet?text=Checkout developer typing game by @unclebigbay143 on https://developer-typing-game.netlify.app/#/"
           >
             <abbr title="Make a tweet about us">
               <FontAwesomeIcon icon={faTwitter} />
             </abbr>
           </a>
           <a
-            href="https://www.linkedin.com/sharing/share-offsite/?url=unclebigbay.hashnode.dev"
+            href="https://www.linkedin.com/sharing/share-offsite/?url=https://developer-typing-game.netlify.app/"
             target="_blank"
             rel="noopener noreferrer"
           >

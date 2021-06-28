@@ -12,10 +12,6 @@ import "aos/dist/aos.css";
 AOS.init();
 
 export const Homepage = () => {
-  // useEffect(() => {
-  //   // AOS.refresh();
-  // }, []);
-
   let isToken = localStorage.getItem("jwt-token");
   const [darkTheme, setDarkTheme] = useState("");
   let prefferedTheme = JSON.parse(localStorage.getItem("_dark_theme"));

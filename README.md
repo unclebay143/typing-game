@@ -2,6 +2,7 @@
 
 
 ## Technologies
+- Yarn
 - React JS
 - Html
 - Css

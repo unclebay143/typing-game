@@ -119,6 +119,7 @@
   .typing-wrapper,
   .typing-input-wrapper {
     display: block;
+    border-radius: 0.4rem;
   }
 
   .typing-wrapper {

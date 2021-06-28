@@ -11,12 +11,13 @@
 }
 
 .select-pro-language select {
+  border-radius: 0.4rem;
   text-transform: capitalize;
   border: 1px solid var(--touch-color);
   outline: none;
   font-family: var(--poppins);
   cursor: pointer;
-  box-shadow: inset 0 0 0 1px var(--touch-color);
+  box-shadow: inset 0 0 0 1px var(--white-color);
   padding: 0.125rem;
 }
 

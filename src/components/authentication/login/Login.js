@@ -22,7 +22,6 @@ export const Login = () => {
     history.push(pageurl.DASHBOARD);
   }
 
-  console.count();
   return (
     <React.Fragment>
       <FormNavbar loginPage={true} />
@@ -102,7 +101,7 @@ export const Login = () => {
           )}
         </Formik>
 
-        <div className="login-image">
+        <div className="login-image" data-aos="zoom-in">
           <img
             className="type-writer"
             src={typeWriter}

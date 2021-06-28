@@ -9,6 +9,7 @@ import {
   LOAD_USER_ENDPOINT,
   LOGIN,
   REGISTER,
+  UPDATE_USER_PROFILE_ENDPOINT,
 } from "./root-endpoints";
 
 // Registration service function
@@ -79,6 +80,19 @@ const loadPlayerProfile = async () => {
   }
 };
 
+// Update user profile (twitter for now)
+export const updatePlayerProfile = async (twitterHandle) => {
+  try {
+    const res = await axiosInstance.put(
+      BASE_URL + UPDATE_USER_PROFILE_ENDPOINT,
+      twitterHandle
+    );
+    return res;
+  } catch (err) {
+    console.log(err);
+  }
+};
+
 // Load user
 const loadPlayerGameRecord = async () => {
   // Async/Await
@@ -103,6 +117,7 @@ const UserService = {
   registerNewPlayer,
   loginPlayer,
   loadPlayerProfile,
+  updatePlayerProfile,
   loadPlayerGameRecord,
 };
 

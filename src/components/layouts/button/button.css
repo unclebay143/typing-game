@@ -11,17 +11,21 @@
   text-transform: uppercase;
   text-decoration: none;
   color: var(--primary-color);
-  padding: 0.75rem 1rem;
 }
 
 .custom--btn:hover {
   box-shadow: inset 0 0 0 1px var(--primary-color);
 }
 
+.custom--btn.link-btn.button {
+  padding: 0rem;
+}
+
 .custom--btn a {
   text-decoration: none;
   color: inherit;
   display: block;
+  padding: 0.75rem 1rem;
 }
 
 .custom--btn-outline {

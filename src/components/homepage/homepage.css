@@ -1,4 +1,8 @@
-.home{
-    min-height: 100vh;
-    background-color: var(--primary-color);
+.home {
+  min-height: 100vh;
+  background-color: var(--primary-color);
+}
+
+.dark.home {
+  background-color: var(--touch-color);
 }

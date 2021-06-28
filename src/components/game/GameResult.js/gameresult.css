@@ -2,8 +2,11 @@
   color: var(--white-color);
   border: 2px solid var(--white-color);
   width: 50%;
-  height: 100%;
   padding: 2rem 0;
+}
+
+.light-mode.result-container {
+  background-color: var(--touch-color);
 }
 
 .result-heading {
@@ -39,6 +42,10 @@
 .share-point {
   text-align: center;
   margin-top: 3rem;
+}
+
+.share-point .link-btn a {
+  padding: 0rem !important;
 }
 
 .share-point button:not(:first-child) {

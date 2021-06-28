@@ -31,16 +31,17 @@ export const TopPlayers = () => {
     // Get all players
     const fetchTopPlayers = async () => {
       try {
+        // Get players
         const players = await axios.get(BASE_URL + LOAD_ALL_PLAYERS);
 
-        if (players) {
+        // Extract players array from response
+        const extractPlayersArray = players.data[0];
+        if (extractPlayersArray) {
           // Sort top players from current lead to least
-          const descendingOrderOfPlayers = players.data.sort((a, b) => {
+          const descendingOrderOfPlayers = extractPlayersArray.sort((a, b) => {
             // Add the wpm and accuracy to get the highest
             return b.wpm + a.accuracy - (a.wpm + a.accuracy);
           });
-
-          console.log(descendingOrderOfPlayers);
 
           // Rank the user in the database
           rankPlayers(descendingOrderOfPlayers);
@@ -83,6 +84,7 @@ export const TopPlayers = () => {
     );
   }
 
+  console.log(topPlayers);
   return (
     <React.Fragment>
       <section className="rank-section">
@@ -99,7 +101,7 @@ export const TopPlayers = () => {
           </div>
           {topPlayers
             ?.slice(0, topPlayerLimit)
-            .map(({ wpm, accuracy, id, time, userName }) => {
+            .map(({ wpm, accuracy, id, time, userName, twitterHandle }) => {
               return (
                 <TopPlayersCard
                   key={id}
@@ -108,6 +110,7 @@ export const TopPlayers = () => {
                   userName={userName}
                   id={id}
                   gameTime={time}
+                  twitterHandle={twitterHandle}
                 />
               );
             })}

@@ -125,6 +125,7 @@ export const Registration = () => {
           {/* social media signup layout goes well here in case you want to add it, import share button here */}
           <img
             className="type-writer"
+            data-aos="zoom-in"
             src={typeWriter}
             alt="two people with typewriter"
           />

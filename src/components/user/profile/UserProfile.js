@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./userprofile.css";
 // Image
 import dummyImage from "./../../../assets/img/no-image-avatar.png";
@@ -8,9 +8,15 @@ import { Link } from "react-router-dom";
 
 export const UserProfile = () => {
   const { user, gameRecord } = useSelector((state) => state.user);
-
   const { userName, email, twitterHandle } = user || {};
   const { rank } = gameRecord || {};
+  const [darkTheme, setDarkTheme] = useState("");
+  let prefferedTheme = JSON.parse(localStorage.getItem("_dark_theme"));
+
+  // Set user preferred theme
+  useEffect(() => {
+    setDarkTheme(prefferedTheme);
+  }, [prefferedTheme]);
 
   if (!user) {
     return <h4 className="no-network">Please wait...</h4>;
@@ -18,7 +24,7 @@ export const UserProfile = () => {
 
   return (
     <React.Fragment>
-      <div className="user">
+      <div className={`user ${darkTheme ? "dark" : "light-mode"}`}>
         <img src={dummyImage} alt="empty profile avatar" />
         <h4 className="user-name">{userName}</h4>
         <p className="user-twitter-handle">

@@ -21,7 +21,7 @@ export const PlayerPerformance = ({ currentGameWpm, currentGameAccuracy }) => {
           <span className="position">{rank || "0"}</span>
         </div>
         <div className="current-performance">
-          <span className="wpm">WPM: {currentGameWpm} </span> |{" "}
+          <span className="wpm">CPM: {currentGameWpm} </span> |{" "}
           <span className="accuracy"> ACC: {currentGameAccuracy}%</span>
         </div>
         <div
@@ -29,8 +29,8 @@ export const PlayerPerformance = ({ currentGameWpm, currentGameAccuracy }) => {
             togglePerformance && "display-full-performance"
           }`}
         >
+          <p>CPM: {wpm}</p>
           <p>ACCURACY: {accuracy}%</p>
-          <p>WPM: {wpm}</p>
         </div>
       </section>
     </React.Fragment>

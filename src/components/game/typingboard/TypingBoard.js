@@ -5,7 +5,6 @@ import { codeQuotes } from "./codeQuotes";
 import { currentTime } from "../../_helper/time/time";
 import { PlayerPerformance } from "../performance/PlayerPerformance";
 import { smileyMode } from "./smileyMode";
-import { Timer } from "./Timer";
 import { pageurl } from "../../pageurl";
 import { useHistory } from "react-router";
 import { updatePlayerGameRecord } from "../../../redux/game/actions/game.action";
@@ -36,7 +35,7 @@ export const TypingBoard = () => {
   let prefferedTheme = JSON.parse(localStorage.getItem("_dark_theme"));
 
   // Count down
-  const [timeRemaining, setTimeRemaining] = useState(30);
+  const [timeRemaining, setTimeRemaining] = useState(60);
   const [isTimeRunning, setIsTimeRunning] = useState(false);
 
   // Set user preferred theme

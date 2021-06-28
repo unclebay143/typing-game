@@ -17,21 +17,21 @@ export const FormNavbar = ({ loginPage }) => {
             <Button
               label="Create a new account"
               linkUrl={pageurl.REGISTER}
-              look="custom--btn-touch new-account-btn"
+              look="custom--btn-touch new-account-btn link-btn"
             />
           ) : (
             <Button
               label="Start Typing"
               linkUrl={pageurl.LOGIN}
-              look="custom--btn-touch login-btn"
+              look="custom--btn-touch login-btn link-btn"
             />
           )}
 
           {/* HOME BUTTON */}
           <Button
-            label="Explore"
+            label="Learder Board"
             linkUrl={pageurl.HOMEPAGE}
-            look="custom--btn-outline-primary explore-btn"
+            look="custom--btn-outline-primary explore-btn link-btn"
           />
         </nav>
       </header>

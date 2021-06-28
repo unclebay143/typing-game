@@ -1,11 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import "./updateprofile.css";
 import { updateProfileSchema } from "../../_helper/validator/schema";
+import { updateProfile } from "../../../redux/user/actions/user.actions";
+import { useDispatch, useSelector } from "react-redux";
+import { pageurl } from "../../pageurl";
+import { useHistory } from "react-router";
 
 export const UpdateProfile = () => {
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const { user } = useSelector((state) => state.user);
+  const { email, userName, twitterHandle } = user || {};
+  const [darkTheme, setDarkTheme] = useState("");
+  let prefferedTheme = JSON.parse(localStorage.getItem("_dark_theme"));
+
+  // Set user preferred theme
+  useEffect(() => {
+    setDarkTheme(prefferedTheme);
+  }, [prefferedTheme]);
+
   return (
-    <div className="update-profile">
+    <div className={`update-profile ${darkTheme ? "dark" : "light-mode"}`}>
       <Formik
         initialValues={{
           twitterHandle: "",
@@ -13,8 +29,10 @@ export const UpdateProfile = () => {
         // Yup validate form
         validationSchema={updateProfileSchema}
         // Handle form submission
-        onSubmit={(values) => {
-          console.log(values);
+        onSubmit={(values, action) => {
+          dispatch(updateProfile(values, action)).then((res) => {
+            history.push(pageurl.USER_PROFILE);
+          });
         }}
       >
         {({ isSubmitting }) => (
@@ -25,20 +43,20 @@ export const UpdateProfile = () => {
             <div className="input-wrapper">
               <div className="input-heading">
                 <div className="input-label">
-                  <label htmlFor="email">Username</label>
+                  <label htmlFor="username">Username</label>
                 </div>
                 <ErrorMessage
                   className="error-message"
-                  name="email"
+                  name="username"
                   component="div"
                 />
               </div>
               <Field
                 type="text"
-                name="email"
-                id="email"
-                placeholder="Update username"
-                disabled="true"
+                name="username"
+                id="username"
+                placeholder={userName}
+                disabled={true}
               />
             </div>
             <div className="input-wrapper">
@@ -56,8 +74,8 @@ export const UpdateProfile = () => {
                 type="text"
                 name="email"
                 id="email"
-                placeholder="username@sample.com"
-                disabled="true"
+                placeholder={email}
+                disabled={true}
               />
             </div>
             <div className="input-wrapper">
@@ -75,7 +93,7 @@ export const UpdateProfile = () => {
                 type="text"
                 name="twitterHandle"
                 id="twitterHandle"
-                placeholder="@username"
+                placeholder={twitterHandle ? twitterHandle : "@username"}
               />
             </div>
             <div className="input-wrapper">

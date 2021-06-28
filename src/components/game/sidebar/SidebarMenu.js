@@ -13,7 +13,6 @@ import {
   faUserFriends,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link } from "react-router-dom";
 import { pageurl } from "../../pageurl";
 import { useDispatch, useSelector } from "react-redux";
 import { logOut } from "../../../redux/user/actions/user.actions";
@@ -21,9 +20,10 @@ import { comingSoon } from "../../comingSoon";
 
 export const SidebarMenu = ({ openMenu }) => {
   const dispatch = useDispatch();
-  const { user } = useSelector((state) => state.user);
   const [playerProfile, setPlayerProfile] = useState({});
-  const { userName, email } = playerProfile;
+  const { user, gameRecord } = useSelector((state) => state.user);
+  const { userName } = playerProfile;
+  const { rank } = gameRecord || {};
 
   useEffect(() => {
     if (user) {
@@ -36,9 +36,9 @@ export const SidebarMenu = ({ openMenu }) => {
       <div className={`sidebar-menu ${openMenu ? "open" : "closed"}`}>
         <section className="sidebar-menu--1">
           <img src={dummyImage} alt="empty profile avatar" />
-          <div>
+          <div className="menu-1--item">
             {userName} <br />
-            {email}
+            <p>Rank: {rank}</p>
           </div>
         </section>
         <section className="sidebar-menu--2">

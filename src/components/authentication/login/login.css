@@ -69,6 +69,7 @@ form {
   font-weight: 700;
   line-height: 1.5;
   font-family: var(--poppins);
+  padding: 0.75rem 1rem;
 }
 
 .forgot-password {

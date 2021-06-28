@@ -7,7 +7,7 @@
 }
 
 :root {
-  --poppins: "Poppins";
+  --poppins: "Poppins", sans-serif;
   --touch-color: #4a154b;
   --primary-color: #2696e8;
   /* --primary-color: #4A154B;

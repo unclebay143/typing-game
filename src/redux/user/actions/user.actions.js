@@ -109,12 +109,27 @@ export const loadProfile = () => async (dispatch) => {
     console.log(error);
   }
 };
+
+// Update user profile (twitter for now)
+export const updateProfile =
+  (twitterHandle, { setSubmitting }) =>
+  async (dispatch) => {
+    try {
+      const response = await UserService.updatePlayerProfile(twitterHandle);
+      if (response) {
+        setSubmitting(false);
+        dispatch(loadProfile());
+        return response;
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
 // Load player game record
 export const loadPlayerGameRecord = () => async (dispatch) => {
   try {
     const gameRecord = await UserService.loadPlayerGameRecord();
-    console.log(gameRecord);
-
     // Set user profile to redux
     if (gameRecord) {
       dispatch({

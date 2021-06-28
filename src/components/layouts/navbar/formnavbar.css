@@ -1,42 +1,40 @@
-.formnavbar-header{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 2vh 7.3vw;
-    position: absolute;
+.formnavbar-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 2vh 7.3vw;
+  position: absolute;
+  z-index: 999;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: var(--white-color);
+}
+
+.formnavbar-header .navbar--brand {
+  color: var(--touch-color);
+  font-size: 0.7rem;
+}
+
+.form-navbar button:first-child {
+  margin-right: 0.67rem;
+}
+
+@media (max-width: 900px) {
+  .form-navbar {
     width: 100%;
-    top: 0;
-    left: 0;
-    background-color: var(--white-color);
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
-.formnavbar-header .navbar--brand{
-    color: var(--touch-color);
-    font-size: .7rem;
-}
+@media (max-width: 400px) {
+  .new-account-btn,
+  .login-btn {
+    font-size: 0.66rem;
+  }
 
-
-.form-navbar button:first-child{
-    margin-right: 0.67rem;
-}
-
-@media(max-width: 900px){
-
-    .form-navbar{
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-    }
-}
-
-@media(max-width: 400px){
-
-    .new-account-btn,
-    .login-btn{
-        font-size: 0.66rem;
-    }
-    
-    .explore-btn{
-        font-size: 0.6rem;
-    }
+  .explore-btn {
+    font-size: 0.6rem;
+  }
 }

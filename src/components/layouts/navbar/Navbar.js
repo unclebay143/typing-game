@@ -64,12 +64,16 @@ export const Navbar = () => {
           <section className="right-items">
             <div className="right-items-links">
               <Button
-                look="custom--btn-outline"
+                look="custom--btn-outline link-btn"
                 label="Start Typing"
                 linkUrl={pageurl.LOGIN}
               />
 
-              <Button label="create a new account" linkUrl={pageurl.REGISTER} />
+              <Button
+                label="create a new account"
+                look="link-btn"
+                linkUrl={pageurl.REGISTER}
+              />
             </div>
           </section>
         </nav>

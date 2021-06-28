@@ -12,6 +12,10 @@
   line-height: 1.5;
 }
 
+.light-mode.user {
+  color: var(--touch-color);
+}
+
 .user img {
   width: 30%;
 }

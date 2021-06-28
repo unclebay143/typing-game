@@ -12,7 +12,13 @@ import { SET_SCREEN_MESSAGE } from "../../../redux/types";
 import { timeAgo } from "../../_helper/time/time";
 
 // Players card
-export const TopPlayersCard = ({ userName, wpm, gameTime, accuracy }) => {
+export const TopPlayersCard = ({
+  userName,
+  wpm,
+  gameTime,
+  accuracy,
+  twitterHandle,
+}) => {
   const dispatch = useDispatch();
 
   // Twitter username not available
@@ -26,7 +32,7 @@ export const TopPlayersCard = ({ userName, wpm, gameTime, accuracy }) => {
     });
   };
   return (
-    <div className="top-player">
+    <div className="top-player" data-aos="fade-up">
       <div className="left-info">
         <div className="top-player--image">
           <img src={face} alt="top player avatar" />
@@ -40,20 +46,30 @@ export const TopPlayersCard = ({ userName, wpm, gameTime, accuracy }) => {
             </div>
             <p className="score-time">
               {" "}
-              {wpm}wpm, {accuracy}% - {timeAgo(gameTime)}
+              {wpm}cpm, {accuracy}% - {timeAgo(gameTime)}
             </p>
           </div>
         </div>
       </div>
       <div className="right-info">
-        <RegularButton
-          // linkUrl="https://www.twitter.com/unclebigbay143"
-          func={() => twitterDisable()}
-          look="custom--btn-touch"
-          label="Twitter"
-          icon={faTwitter}
-          target="_blank"
-        />
+        {twitterHandle ? (
+          <RegularButton
+            linkUrl={`https://www.twitter.com/intent/follow?screen_name=${twitterHandle}`}
+            look="custom--btn-touch link-btn"
+            label="Twitter"
+            icon={faTwitter}
+            target="_blank"
+          />
+        ) : (
+          <RegularButton
+            func={() => twitterDisable()}
+            look="custom--btn-touch link-btn"
+            label="Twitter"
+            icon={faTwitter}
+            target="_blank"
+            style={{ opacity: "0" }}
+          />
+        )}
       </div>
     </div>
   );

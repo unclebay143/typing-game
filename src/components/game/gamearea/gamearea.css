@@ -9,7 +9,7 @@
   font-family: var(--poppins);
   background-color: var(--white-color);
   transition: 0.5s ease;
-  background: linear-gradient(394deg, var(--touch-color), transparent);
+  /* background: linear-gradient(394deg, var(--touch-color), transparent); */
 }
 
 .dark.game-container {

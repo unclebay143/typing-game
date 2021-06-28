@@ -50,6 +50,12 @@
   text-align: center;
 }
 
+@media (max-width: 900px) {
+  .show-smiley {
+    display: none;
+  }
+}
+
 .typing-text {
   width: 88%;
   white-space: nowrap;

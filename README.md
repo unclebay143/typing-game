@@ -1,5 +1,7 @@
 ## Typing Game for Developers to Boost their Typing Speed and Accuracy
 
+[Read Blog]()
+
 
 ## Technologies
 - Yarn

@@ -8,9 +8,8 @@ import "./winner.css";
 export const WinnerAlert = () => {
   const { gameRecord } = useSelector((state) => state.user);
   const [congratulate, setCongratulate] = useState(false);
-  const { rank } = gameRecord || {};
+  const { rank, userName } = gameRecord || {};
   const [rankWord, setrankWord] = useState();
-
   useEffect(() => {
     if (rank > 0 && rank < 6) {
       setCongratulate(true);
@@ -54,9 +53,11 @@ export const WinnerAlert = () => {
           </section>
 
           <section className="content">
-            <h1>Congratulations</h1>
-
-            <p>you are the {rankWord} fastest developer</p>
+            <h1>Congratulations!!!</h1>
+            <p>
+              <span className="congratulation-name">{userName}</span>, you are
+              the {rankWord} fastest developer
+            </p>
             <span>
               <RegularButton
                 type="custom--btn-outline twitter-share-button"
@@ -73,11 +74,11 @@ export const WinnerAlert = () => {
             </span>
           </section>
           <section className="balloon-container">
-            <div class="balloon"></div>
-            <div class="balloon"></div>
-            <div class="balloon"></div>
-            <div class="balloon"></div>
-            <div class="balloon"></div>
+            <div className="balloon"></div>
+            <div className="balloon"></div>
+            <div className="balloon"></div>
+            <div className="balloon"></div>
+            <div className="balloon"></div>
           </section>
         </section>
       </div>

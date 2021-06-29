@@ -41,9 +41,17 @@
   font-size: 2.5rem;
 }
 
+.congratulation-name {
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  color: #8882c9;
+  color: #c9c85e;
+  font-weight: 700;
+}
+
 .winner-alert .content p {
   text-transform: capitalize;
-  color: #c9c85e;
+  color: #66cc86;
   font-size: 1.2rem;
 }
 

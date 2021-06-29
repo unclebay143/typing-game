@@ -6,13 +6,8 @@ import "./navbar.css";
 // components
 import { Button } from "../button/Button";
 import { pageurl } from "../../pageurl";
-import { Link } from "react-router-dom";
-import { comingSoon } from "../../comingSoon";
-import { useDispatch } from "react-redux";
 
 export const Navbar = () => {
-  const dispatch = useDispatch();
-
   return (
     <React.Fragment>
       <header>

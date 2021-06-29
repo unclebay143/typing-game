@@ -62,10 +62,11 @@ export const WinnerAlert = () => {
                 type="custom--btn-outline twitter-share-button"
                 target="_blank"
                 rel="noopener noreferrer"
-                linkUrl={`https://twitter.com/intent/tweet?text=I am the number ${rank} fastest typist on the developers typing game website developed by @unclebigbay143
-            
-            
-            Check out how fast your coding speed is on https://developer-typing-game.netlify.app/`}
+                linkUrl={`
+                
+                https://twitter.com/intent/tweet?text=I am the ${rankWord} fastest typist on the developers typing game website developed by @unclebigbay143
+
+                Check out how fast your coding speed is on https://developer-typing-game.netlify.app/`}
                 label="Tweet"
                 abbrTitle="Share your achievement"
               />

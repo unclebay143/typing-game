@@ -68,7 +68,7 @@ export const TopPlayers = () => {
   }, [dispatch]);
 
   // Number of topPlayers to display
-  const topPlayerLimit = showAll ? 20 : 5;
+  const topPlayerLimit = showAll ? 10 : 5;
 
   // Handle the show more button
   const handleShowAll = () => {

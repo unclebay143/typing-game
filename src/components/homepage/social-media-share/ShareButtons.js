@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./share-buttons.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -10,11 +10,14 @@ import { faClipboard } from "@fortawesome/free-solid-svg-icons";
 import { copyToClipBoard } from "../../_helper/clipBoard/copyToClipBoard";
 
 export const ShareButtons = () => {
+  const [copied, setCopied] = useState(false);
+
   const handleCopy = () => {
     // get the input that conatins the caption
     const copyText = document.querySelector(".media-caption");
     // invoke the copy function
     copyToClipBoard(copyText);
+    setCopied(true);
   };
   return (
     <React.Fragment>
@@ -28,7 +31,10 @@ export const ShareButtons = () => {
             readOnly
           />
           <abbr title="Copy to clipboard" onClick={() => handleCopy()}>
-            <FontAwesomeIcon icon={faClipboard} />
+            <FontAwesomeIcon
+              icon={faClipboard}
+              className={`${copied && "copied"}`}
+            />
           </abbr>
           <a
             href="https://www.facebook.com/sharer/sharer.php?u=https://developer-typing-game.netlify.app/"

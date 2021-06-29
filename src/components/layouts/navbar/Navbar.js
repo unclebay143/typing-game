@@ -26,7 +26,7 @@ export const Navbar = () => {
 
             <div className="left-items-links">
               <a
-                href="https://unclebay143.github.io/typing-game/"
+                href="https://unclebigbay.com/introducing-developer-typing-game-platform-powered-by-the-hern-stack"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -39,12 +39,13 @@ export const Navbar = () => {
               >
                 Team
               </a>
-              <Link
-                to={pageurl.HOMEPAGE}
-                onClick={() => dispatch(comingSoon("demo"))}
+              <a
+                href="https://www.youtube.com/watch?v=25E6FPy9SPc"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Demo
-              </Link>
+              </a>
               <a
                 href="https://www.buymeacoffee.com/unclebigbay"
                 target="_blank"
@@ -53,7 +54,7 @@ export const Navbar = () => {
                 Buy Me a coffee
               </a>
               <a
-                href="https://wa.link/sfy4nc"
+                href="https://unclebigbay.com/introducing-developer-typing-game-platform-powered-by-the-hern-stack"
                 target="_blank"
                 rel="noopener noreferrer"
               >

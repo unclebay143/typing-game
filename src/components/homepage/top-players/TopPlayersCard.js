@@ -56,7 +56,7 @@ export const TopPlayersCard = ({
           <RegularButton
             linkUrl={`https://www.twitter.com/intent/follow?screen_name=${twitterHandle}`}
             look="custom--btn-touch link-btn"
-            label="Twitter"
+            label="Follow"
             icon={faTwitter}
             target="_blank"
           />

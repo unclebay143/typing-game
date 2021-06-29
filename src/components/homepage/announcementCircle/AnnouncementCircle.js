@@ -35,7 +35,6 @@ export const AnnouncementCircle = () => {
     getAllPlayers();
   }, []);
 
-  console.log(registeredUsername);
   return (
     <React.Fragment>
       <section
@@ -44,9 +43,9 @@ export const AnnouncementCircle = () => {
       >
         <div className="announcement-circle--content">
           <h1>
-            Join {registeredUsername[0] || "unclebigbay"},{" "}
-            {registeredUsername[1] || "grace"} and {registeredUsername.length}+
-            developers improving their typing speed.
+            Join {"unclebigbay"}, {registeredUsername[0] || "grace"} and{" "}
+            {registeredUsername.length || "12"}+ developers improving their
+            typing speed.
           </h1>
           <div className="lets-go">
             <h1>

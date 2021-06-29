@@ -56,7 +56,7 @@ export const GameResult = () => {
             type="custom--btn-outline twitter-share-button"
             target="_blank"
             rel="noopener noreferrer"
-            linkUrl={`https://twitter.com/intent/tweet?text=I just scored ${wpm}wpm and had ${accuracy} accuracies on developers typing game website developed by @unclebigbay143 @hashnode @harperdbio 
+            linkUrl={`https://twitter.com/intent/tweet?text=I just scored ${wpm}cpm and had ${accuracy} accuracies on developers typing game website developed by @unclebigbay143 @hashnode @harperdbio 
             
             
             Check out how fast your coding speed is on https://developer-typing-game.netlify.app/`}

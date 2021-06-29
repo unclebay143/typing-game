@@ -31,6 +31,9 @@ export const WinnerAlert = () => {
         case 4:
           setrankWord("4th");
           break;
+        case 5:
+          setrankWord("5th");
+          break;
         default:
           break;
       }

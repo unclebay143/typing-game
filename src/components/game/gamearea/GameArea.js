@@ -14,6 +14,7 @@ import {
 import { useDispatch } from "react-redux";
 import { UserProfile } from "../../user/profile/UserProfile";
 import { UpdateProfile } from "../../user/profile/UpdateProfile";
+import { WinnerAlert } from "../../winner/WinnerAlert";
 
 export const GameArea = () => {
   // STATE TO BE PASSED TO SIDEBAR FOR TOGGLE
@@ -43,6 +44,7 @@ export const GameArea = () => {
 
   return (
     <React.Fragment>
+      <WinnerAlert />
       <main className={`game-container ${darkTheme ? "dark" : "light-mode"}`}>
         <Switch>
           <Route exact path={pageurl.GAME_RESULT} component={GameResult} />

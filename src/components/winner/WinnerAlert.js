@@ -18,21 +18,25 @@ export const WinnerAlert = () => {
   }, [rank]);
 
   useEffect(() => {
-    if (rank) {
+    if (rank && congratulate) {
       switch (rank) {
         case 1:
           setrankWord("1st");
+          break;
         case 2:
           setrankWord("2nd");
+          break;
         case 3:
           setrankWord("3rd");
+          break;
         case 4:
           setrankWord("4th");
+          break;
         default:
           break;
       }
     }
-  }, [rank]);
+  }, [rank, congratulate]);
 
   return (
     <React.Fragment>

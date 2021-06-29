@@ -5,8 +5,6 @@ import {
 } from "../../../redux/user/service/root-endpoints";
 
 export const rankPlayers = (descendingOrderOfPlayers) => {
-  console.log(descendingOrderOfPlayers);
-
   try {
     let rankingTempholder = [];
 

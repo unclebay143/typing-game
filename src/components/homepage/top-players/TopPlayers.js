@@ -84,7 +84,6 @@ export const TopPlayers = () => {
     );
   }
 
-  console.log(topPlayers);
   return (
     <React.Fragment>
       <section className="rank-section">

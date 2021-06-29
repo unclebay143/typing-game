@@ -49,7 +49,12 @@ export const SidebarMenu = ({ openMenu }) => {
             View profile
           </a>
 
-          <a href={pageurl.HOMEPAGE} className="sidebar-link">
+          <a
+            href={pageurl.HOMEPAGE}
+            className="sidebar-link"
+            // target="_blank" uncomment when there is a live update
+            // rel="noopener noreferrer"
+          >
             <div className="link-icon">
               <FontAwesomeIcon icon={faBorderAll} className="logout-icon" />
             </div>

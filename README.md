@@ -1,6 +1,6 @@
 ## Typing Game for Developers to Boost their Typing Speed and Accuracy
 
-[Read Blog]()
+[Read Blog](https://unclebigbay.com/introducing-developer-typing-game-platform-powered-by-the-hern-stack)
 
 
 ## Technologies
@@ -15,6 +15,11 @@
 - 🎶 Lofi Music
 - 🔗 Share Achievement
 - 🌓 Light and darkmode
+
+<hr />
+
+### [Watch Demo Here](https://www.youtube.com/watch?v=25E6FPy9SPc)
+
 
 <hr />
 

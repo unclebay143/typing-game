@@ -86,7 +86,7 @@ export const Sidebar = ({ themeCallback }) => {
           </div>
           <div
             to={pageurl.GAME_RESULT}
-            className="profile-image"
+            className={`profile-image ${notification && "lift"}`}
             onClick={() => setOpenMenu(!openMenu)}
           >
             <img src={dummyImage} alt="player profile" />

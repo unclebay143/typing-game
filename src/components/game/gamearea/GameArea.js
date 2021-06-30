@@ -45,7 +45,7 @@ export const GameArea = () => {
 
   // Notify user to update profile
   useEffect(() => {
-    if (user && !twitterHandle) {
+    if (user && twitterHandle) {
       dispatch({
         type: SET_NOTIFICATION,
         payload: {

@@ -69,6 +69,10 @@ option {
   height: 100%;
 }
 
+.lift.profile-image img {
+  filter: drop-shadow(0px 10px 3px white);
+}
+
 @media (min-width: 900px) {
   .sidebar {
     overflow: unset;

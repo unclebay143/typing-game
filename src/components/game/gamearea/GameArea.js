@@ -11,10 +11,12 @@ import {
   loadPlayerGameRecord,
   loadProfile,
 } from "../../../redux/user/actions/user.actions";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { UserProfile } from "../../user/profile/UserProfile";
 import { UpdateProfile } from "../../user/profile/UpdateProfile";
 import { WinnerAlert } from "../../winner/WinnerAlert";
+import { NotifyPlayer } from "../../layouts/notification/flier-notification/Notify";
+import { CLEAR_NOTIFICATION, SET_NOTIFICATION } from "../../../redux/types";
 
 export const GameArea = () => {
   // STATE TO BE PASSED TO SIDEBAR FOR TOGGLE
@@ -22,6 +24,8 @@ export const GameArea = () => {
   const [darkTheme, setDarkTheme] = useState(prefferedTheme);
   const dispatch = useDispatch();
   const history = useHistory();
+  const { user } = useSelector((state) => state.user);
+  const { twitterHandle } = user || {};
 
   // Get user jwt token
   const token = localStorage.getItem("jwt-token");
@@ -37,6 +41,30 @@ export const GameArea = () => {
     dispatch(loadPlayerGameRecord());
   }, [dispatch]);
 
+  console.log(twitterHandle);
+
+  // Notify user to update profile
+  useEffect(() => {
+    if (user && !twitterHandle) {
+      dispatch({
+        type: SET_NOTIFICATION,
+        payload: {
+          message: `your profile with your twitter handle to get more followers when you reach `,
+          url: pageurl.UPDATE_PROFILE,
+          urlLabel: "update",
+          moreUrl: {
+            url1: pageurl.HOMEPAGE,
+            url1Label: "top 10 players.",
+          },
+        },
+      });
+    } else {
+      dispatch({
+        type: CLEAR_NOTIFICATION,
+      });
+    }
+  }, [twitterHandle, user, dispatch]);
+
   // redirect to login page if not authenticated
   if (!token) {
     history.push(pageurl.LOGIN);
@@ -45,6 +73,7 @@ export const GameArea = () => {
   return (
     <React.Fragment>
       <WinnerAlert />
+      <NotifyPlayer />
       <main className={`game-container ${darkTheme ? "dark" : "light-mode"}`}>
         <Switch>
           <Route exact path={pageurl.GAME_RESULT} component={GameResult} />

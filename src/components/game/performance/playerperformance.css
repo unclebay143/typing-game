@@ -13,6 +13,10 @@
   overflow: hidden;
 }
 
+.custom-mt-4.typist-performance {
+  margin-top: 4rem !important;
+}
+
 /* SHOW FULL PERFORMANCE */
 .collapse-typist-performance {
   height: 100%;

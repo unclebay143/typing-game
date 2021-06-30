@@ -34,13 +34,31 @@ export const TopPlayers = () => {
         // Get players
         const players = await axios.get(BASE_URL + LOAD_ALL_PLAYERS);
 
+        const samplePlayer = [
+          {
+            player: 2,
+            wpm: 8,
+            accuracy: 99,
+          },
+          {
+            player: 1,
+            wpm: 9,
+            accuracy: 100,
+          },
+          {
+            player: 3,
+            wpm: 7,
+            accuracy: 98,
+          },
+        ];
+
         // Extract players array from response
         const extractPlayersArray = players.data[0];
         if (extractPlayersArray) {
           // Sort top players from current lead to least
           const descendingOrderOfPlayers = extractPlayersArray.sort((a, b) => {
-            // Add the wpm and accuracy to get the highest
-            return b.wpm + a.accuracy - (a.wpm + a.accuracy);
+            // sort by wpm/code per minute
+            return b.wpm - a.wpm;
           });
 
           // Rank the user in the database

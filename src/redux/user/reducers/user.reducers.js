@@ -6,10 +6,13 @@ import {
   USER_LOADED,
   PLAYER_GAME_RECORD_LOADED,
   LOGOUT,
+  CLEAR_NOTIFICATION,
+  SET_NOTIFICATION,
 } from "./../../types/index";
 
 const INITIAL_STATE = {
   user: null,
+  notification: null,
   gameRecord: null,
   screenMessage: {
     message: null,
@@ -59,6 +62,18 @@ const userReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         gameRecord: payload,
+      };
+
+    case SET_NOTIFICATION:
+      return {
+        ...state,
+        notification: payload,
+      };
+
+    case CLEAR_NOTIFICATION:
+      return {
+        ...state,
+        notification: null,
       };
 
     case LOGOUT:

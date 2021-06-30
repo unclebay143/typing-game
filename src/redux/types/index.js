@@ -10,3 +10,7 @@ export const LOGOUT = "LOGOUT";
 
 // Games
 export const LAST_GAME_RESULT = "LAST_GAME_RESULT";
+
+// Notification
+export const SET_NOTIFICATION = "SET_NOTIFICATION";
+export const CLEAR_NOTIFICATION = "CLEAR_NOTIFICATION";

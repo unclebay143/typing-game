@@ -8,10 +8,11 @@ import { smileyMode } from "./smileyMode";
 import { pageurl } from "../../pageurl";
 import { useHistory } from "react-router";
 import { updatePlayerGameRecord } from "../../../redux/game/actions/game.action";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 export const TypingBoard = () => {
   const { javascript } = codeQuotes;
+  const { notification } = useSelector((state) => state.user);
   const history = useHistory();
   const dispatch = useDispatch();
   const [preferredLanguage, setPreferredLanguage] = useState(javascript);
@@ -139,7 +140,7 @@ export const TypingBoard = () => {
     }
   }, [timeRemaining, isTimeRunning]);
 
-  // EeND GAME
+  // END GAME
   function endGame() {
     setIsTimeRunning(false);
     dispatch(updatePlayerGameRecord(Math.round(wpm), Math.round(accuracy)));

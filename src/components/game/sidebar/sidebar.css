@@ -10,6 +10,10 @@
   color: var(--grey-color);
 }
 
+.custom-pt-5.sidebar {
+  padding-top: 5rem;
+}
+
 .select-pro-language select {
   border-radius: 0.4rem;
   text-transform: capitalize;

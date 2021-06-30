@@ -1,0 +1,39 @@
+.notify-container {
+  padding: 1rem;
+  z-index: 1000;
+  position: relative;
+  background-color: white;
+}
+
+.notify-content {
+  display: flex;
+  justify-content: center;
+}
+
+.close--notify {
+  margin-left: 2rem;
+  color: var(--warning-color);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.notify-content p {
+  font-weight: 550;
+}
+
+.notify-content a {
+  color: #4c96e8;
+  text-transform: capitalize;
+}
+
+.notify-content .black-link {
+  color: initial;
+}
+
+.notify-content .no-underline {
+  text-decoration: none;
+}
+
+.notify-content .no-underline:hover {
+  text-decoration: underline;
+}

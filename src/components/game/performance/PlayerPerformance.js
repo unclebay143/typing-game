@@ -6,14 +6,16 @@ import "./playerperformance.css";
 
 export const PlayerPerformance = ({ currentGameWpm, currentGameAccuracy }) => {
   const [togglePerformance, setTogglePerformance] = useState(false);
+  const { notification } = useSelector((state) => state.user);
+
   const { gameRecord } = useSelector((state) => state.user);
   const { rank, wpm, accuracy } = gameRecord || {};
   return (
     <React.Fragment>
       <section
-        className={`typist-performance ${
-          togglePerformance && "collapse-typist-performance"
-        }`}
+        className={`typist-performance 
+        ${notification && "custom-mt-4"}  
+        ${togglePerformance && "collapse-typist-performance"}`}
         onClick={() => setTogglePerformance(!togglePerformance)}
       >
         <div className="rank-info">

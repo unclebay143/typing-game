@@ -9,11 +9,13 @@ import dummyImage from "./../../../assets/img/no-image-avatar.png";
 
 import { SidebarMenu } from "./SidebarMenu";
 import { comingSoon } from "../../comingSoon";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 export const Sidebar = ({ themeCallback }) => {
   const [darkTheme, setDarkTheme] = useState(false);
   const location = useLocation();
+  const { notification } = useSelector((state) => state.user);
+
   const [showHomeButton, setShowHomeButton] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
   const dispatch = useDispatch();
@@ -48,7 +50,7 @@ export const Sidebar = ({ themeCallback }) => {
 
   return (
     <React.Fragment>
-      <aside className="sidebar">
+      <aside className={`sidebar ${notification && "custom-pt-5"} `}>
         <section className="sidebar-items-top">
           <div className="select-pro-language">
             <select

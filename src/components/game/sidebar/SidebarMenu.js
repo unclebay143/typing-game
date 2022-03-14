@@ -58,7 +58,7 @@ export const SidebarMenu = ({ openMenu }) => {
             <div className="link-icon">
               <FontAwesomeIcon icon={faBorderAll} className="logout-icon" />
             </div>
-            Leaderboard
+            Leaderboard 
           </a>
 
           <div
